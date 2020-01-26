@@ -1,0 +1,87 @@
+Performing Fortran SOURCE FILE Test HAVE_FC_ACCESS_SEQUENTIAL failed with the following output:
+Change Dir: /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_a6124/fast 
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_a6124.dir/build.make CMakeFiles/cmTC_a6124.dir/build
+Building Fortran object CMakeFiles/cmTC_a6124.dir/src.F.o
+/usr/local/bin/gfortran   -DHAVE_FC_ACCESS_SEQUENTIAL  -ffree-form   -c /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp/src.F -o CMakeFiles/cmTC_a6124.dir/src.F.o
+/Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp/src.F:2:81:
+
+   open(10, file='test.bin', access='sequential', form='binary', status='replace')
+                                                                                 1
+Error: FORM specifier in OPEN statement at (1) has invalid value ‘binary’
+make[1]: *** [CMakeFiles/cmTC_a6124.dir/src.F.o] Error 1
+make: *** [cmTC_a6124/fast] Error 2
+
+Source file was:
+program freeform
+  open(10, file='test.bin', access='sequential', form='binary', status='replace')
+  write(10) "first"
+  write(10) "second"
+  close(UNIT=10)
+end program freeform
+Performing Fortran SOURCE FILE Test PARFLOW_FORTRAN_IMPLICIT_NONE_0 failed with the following output:
+Change Dir: /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_c5baf/fast 
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_c5baf.dir/build.make CMakeFiles/cmTC_c5baf.dir/build
+Building Fortran object CMakeFiles/cmTC_c5baf.dir/src.F.o
+/usr/local/bin/gfortran   -DPARFLOW_FORTRAN_IMPLICIT_NONE_0  -ffree-form   -implicitnone -c /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp/src.F -o CMakeFiles/cmTC_c5baf.dir/src.F.o
+gfortran: error: unrecognized command line option '-implicitnone'; did you mean '-fimplicit-none'?
+make[1]: *** [CMakeFiles/cmTC_c5baf.dir/src.F.o] Error 1
+make: *** [cmTC_c5baf/fast] Error 2
+
+Source file was:
+       program test
+       stop
+       end program
+Determining if files malloc.h exist failed with the following output:
+Change Dir: /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_bfc2f/fast 
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_bfc2f.dir/build.make CMakeFiles/cmTC_bfc2f.dir/build
+Building C object CMakeFiles/cmTC_bfc2f.dir/PARFLOW_HAVE_MALLOC_H.c.o
+/Library/Developer/CommandLineTools/usr/bin/clang   -std=gnu11 -o CMakeFiles/cmTC_bfc2f.dir/PARFLOW_HAVE_MALLOC_H.c.o   -c /Users/jackson/ParF/parflow/build/CMakeFiles/CheckIncludeFiles/PARFLOW_HAVE_MALLOC_H.c
+/Users/jackson/ParF/parflow/build/CMakeFiles/CheckIncludeFiles/PARFLOW_HAVE_MALLOC_H.c:2:10: fatal error: 'malloc.h' file not found
+#include <malloc.h>
+         ^~~~~~~~~~
+1 error generated.
+make[1]: *** [CMakeFiles/cmTC_bfc2f.dir/PARFLOW_HAVE_MALLOC_H.c.o] Error 1
+make: *** [cmTC_bfc2f/fast] Error 2
+
+Source:
+/* */
+#include <malloc.h>
+
+
+int main(void){return 0;}
+
+Determining if the mallinfo exist failed with the following output:
+Change Dir: /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_37978/fast 
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_37978.dir/build.make CMakeFiles/cmTC_37978.dir/build
+Building C object CMakeFiles/cmTC_37978.dir/CheckSymbolExists.c.o
+/Library/Developer/CommandLineTools/usr/bin/clang   -std=gnu11 -o CMakeFiles/cmTC_37978.dir/CheckSymbolExists.c.o   -c /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: 'malloc.h' file not found
+#include <malloc.h>
+         ^~~~~~~~~~
+1 error generated.
+make[1]: *** [CMakeFiles/cmTC_37978.dir/CheckSymbolExists.c.o] Error 1
+make: *** [cmTC_37978/fast] Error 2
+
+File /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <malloc.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef mallinfo
+  return ((int*)(&mallinfo))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+

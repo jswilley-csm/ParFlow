@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/jackson/ParF/parflow/pftools/general.h
+stdlib.h
+-
+stdio.h
+-
+
+/Users/jackson/ParF/parflow/pftools/geometry.h
+
+/Users/jackson/ParF/parflow/pftools/gms.h
+general.h
+/Users/jackson/ParF/parflow/pftools/general.h
+geometry.h
+/Users/jackson/ParF/parflow/pftools/geometry.h
+
+/Users/jackson/ParF/parflow/pftools/gmsreadTIN.c
+gms.h
+/Users/jackson/ParF/parflow/pftools/gms.h
+stdio.h
+-
+string.h
+-
+
+/Users/jackson/ParF/parflow/pftools/projecttin.c
+stdio.h
+-
+math.h
+-
+gms.h
+/Users/jackson/ParF/parflow/pftools/gms.h
+

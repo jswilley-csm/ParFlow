@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/jackson/ParF/parflow/pftools/general.h
+stdlib.h
+-
+stdio.h
+-
+
+/Users/jackson/ParF/parflow/pftools/pfwell_data.c
+pfwell_data.h
+/Users/jackson/ParF/parflow/pftools/pfwell_data.h
+
+/Users/jackson/ParF/parflow/pftools/pfwell_data.h
+string.h
+-
+stdarg.h
+-
+stdlib.h
+-
+general.h
+/Users/jackson/ParF/parflow/pftools/general.h
+well.h
+/Users/jackson/ParF/parflow/pftools/well.h
+
+/Users/jackson/ParF/parflow/pftools/well.c
+well.h
+/Users/jackson/ParF/parflow/pftools/well.h
+
+/Users/jackson/ParF/parflow/pftools/well.h
+general.h
+/Users/jackson/ParF/parflow/pftools/general.h
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+

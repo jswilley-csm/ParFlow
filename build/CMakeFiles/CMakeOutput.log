@@ -1,0 +1,1112 @@
+The system is: Darwin - 18.7.0 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /Library/Developer/CommandLineTools/usr/bin/clang 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is AppleClang, found in "/Users/jackson/ParF/parflow/build/CMakeFiles/3.14.7/CompilerIdC/a.out"
+
+Compiling the Fortran compiler identification source file "CMakeFortranCompilerId.F" succeeded.
+Compiler: /usr/local/bin/gfortran 
+Build flags: 
+Id flags: -v 
+
+The output was:
+0
+Driving: /usr/local/bin/gfortran -v CMakeFortranCompilerId.F -mmacosx-version-min=10.14.0 -asm_macosx_version_min=10.14 -l gfortran -shared-libgcc
+Using built-in specs.
+COLLECT_GCC=/usr/local/bin/gfortran
+COLLECT_LTO_WRAPPER=/usr/local/libexec/gcc/x86_64-apple-darwin17.5.0/8.1.0/lto-wrapper
+Target: x86_64-apple-darwin17.5.0
+Configured with: ../gcc-8.1.0/configure --enable-languages=c++,fortran
+Thread model: posix
+gcc version 8.1.0 (GCC) 
+COLLECT_GCC_OPTIONS='-v' '-mmacosx-version-min=10.14.0' '-asm_macosx_version_min=10.14' '-shared-libgcc' '-mtune=core2'
+ /usr/local/libexec/gcc/x86_64-apple-darwin17.5.0/8.1.0/f951 CMakeFortranCompilerId.F -ffixed-form -cpp=/var/folders/h9/lfsdv0fs3xjdc05f9bs_ds6h0000gq/T//cccaGMSk.f90 -quiet -v -D__DYNAMIC__ CMakeFortranCompilerId.F -fPIC -quiet -dumpbase CMakeFortranCompilerId.F -mmacosx-version-min=10.14.0 -mtune=core2 -auxbase CMakeFortranCompilerId -version -fintrinsic-modules-path /usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/finclude -o /var/folders/h9/lfsdv0fs3xjdc05f9bs_ds6h0000gq/T//ccmSq3P6.s
+GNU Fortran (GCC) version 8.1.0 (x86_64-apple-darwin17.5.0)
+	compiled by GNU C version 8.1.0, GMP version 6.0.0, MPFR version 3.1.2-p10, MPC version 1.0.2, isl version none
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/../../../../x86_64-apple-darwin17.5.0/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/finclude
+ /usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/include
+ /usr/local/include
+ /usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/include-fixed
+ /usr/include
+End of search list.
+GNU Fortran2008 (GCC) version 8.1.0 (x86_64-apple-darwin17.5.0)
+	compiled by GNU C version 8.1.0, GMP version 6.0.0, MPFR version 3.1.2-p10, MPC version 1.0.2, isl version none
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+COLLECT_GCC_OPTIONS='-v' '-mmacosx-version-min=10.14.0'  '-shared-libgcc' '-mtune=core2'
+ as -arch x86_64 -v -force_cpusubtype_ALL -mmacosx-version-min=10.14 -o /var/folders/h9/lfsdv0fs3xjdc05f9bs_ds6h0000gq/T//ccKKyN2J.o /var/folders/h9/lfsdv0fs3xjdc05f9bs_ds6h0000gq/T//ccmSq3P6.s
+Apple LLVM version 10.0.1 (clang-1001.0.46.4)
+Target: x86_64-apple-darwin18.7.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1as -triple x86_64-apple-macosx10.14.0 -filetype obj -main-file-name ccmSq3P6.s -target-cpu penryn -fdebug-compilation-dir /Users/jackson/ParF/parflow/build/CMakeFiles/3.14.7/CompilerIdFortran -dwarf-debug-producer Apple LLVM version 10.0.1 (clang-1001.0.46.4) -dwarf-version=4 -mrelocation-model pic -o /var/folders/h9/lfsdv0fs3xjdc05f9bs_ds6h0000gq/T//ccKKyN2J.o /var/folders/h9/lfsdv0fs3xjdc05f9bs_ds6h0000gq/T//ccmSq3P6.s
+Reading specs from /usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/../../../libgfortran.spec
+rename spec lib to liborig
+COLLECT_GCC_OPTIONS='-v' '-mmacosx-version-min=10.14.0'  '-shared-libgcc' '-mtune=core2'
+COMPILER_PATH=/usr/local/libexec/gcc/x86_64-apple-darwin17.5.0/8.1.0/:/usr/local/libexec/gcc/x86_64-apple-darwin17.5.0/8.1.0/:/usr/local/libexec/gcc/x86_64-apple-darwin17.5.0/:/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/:/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/
+LIBRARY_PATH=/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/:/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/../../../
+COLLECT_GCC_OPTIONS='-v' '-mmacosx-version-min=10.14.0'  '-shared-libgcc' '-mtune=core2'
+ /usr/local/libexec/gcc/x86_64-apple-darwin17.5.0/8.1.0/collect2 -dynamic -arch x86_64 -macosx_version_min 10.14.0 -weak_reference_mismatches non-weak -o a.out -L/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0 -L/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/../../.. /var/folders/h9/lfsdv0fs3xjdc05f9bs_ds6h0000gq/T//ccKKyN2J.o -lgfortran -no_compact_unwind -lSystem -lgcc_ext.10.5 -lgcc -lquadmath -lm -lgcc_ext.10.5 -lgcc -lSystem -v
+collect2 version 8.1.0
+/usr/bin/ld -dynamic -arch x86_64 -macosx_version_min 10.14.0 -weak_reference_mismatches non-weak -o a.out -L/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0 -L/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/../../.. /var/folders/h9/lfsdv0fs3xjdc05f9bs_ds6h0000gq/T//ccKKyN2J.o -lgfortran -no_compact_unwind -lSystem -lgcc_ext.10.5 -lgcc -lquadmath -lm -lgcc_ext.10.5 -lgcc -lSystem -v
+@(#)PROGRAM:ld  PROJECT:ld64-450.3
+BUILD 18:16:53 Apr  5 2019
+configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
+Library search paths:
+	/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0
+	/usr/local/lib
+	/usr/lib
+	/usr/local/lib
+Framework search paths:
+	/Library/Frameworks/
+	/System/Library/Frameworks/
+ /usr/bin/nm -n /var/folders/h9/lfsdv0fs3xjdc05f9bs_ds6h0000gq/T//ccKKyN2J.o
+
+
+Compilation of the Fortran compiler identification source "CMakeFortranCompilerId.F" produced "a.out"
+
+The Fortran compiler identification is GNU, found in "/Users/jackson/ParF/parflow/build/CMakeFiles/3.14.7/CompilerIdFortran/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /Library/Developer/CommandLineTools/usr/bin/clang++ 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is AppleClang, found in "/Users/jackson/ParF/parflow/build/CMakeFiles/3.14.7/CompilerIdCXX/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_99ca4/fast 
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_99ca4.dir/build.make CMakeFiles/cmTC_99ca4.dir/build
+Building C object CMakeFiles/cmTC_99ca4.dir/testCCompiler.c.o
+/Library/Developer/CommandLineTools/usr/bin/clang    -o CMakeFiles/cmTC_99ca4.dir/testCCompiler.c.o   -c /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_99ca4
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_99ca4.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/clang   -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_99ca4.dir/testCCompiler.c.o  -o cmTC_99ca4 
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_eb461/fast 
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_eb461.dir/build.make CMakeFiles/cmTC_eb461.dir/build
+Building C object CMakeFiles/cmTC_eb461.dir/CMakeCCompilerABI.c.o
+/Library/Developer/CommandLineTools/usr/bin/clang   -v -Wl,-v -o CMakeFiles/cmTC_eb461.dir/CMakeCCompilerABI.c.o   -c /usr/local/share/cmake-3.14/Modules/CMakeCCompilerABI.c
+Apple LLVM version 10.0.1 (clang-1001.0.46.4)
+Target: x86_64-apple-darwin18.7.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+clang: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
+ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple x86_64-apple-macosx10.14.0 -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -mrelax-all -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mthread-model posix -mdisable-fp-elim -fno-strict-return -masm-verbose -munwind-tables -target-cpu penryn -dwarf-column-info -debugger-tuning=lldb -target-linker-version 450.3 -v -coverage-notes-file /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp/CMakeFiles/cmTC_eb461.dir/CMakeCCompilerABI.c.gcno -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/10.0.1 -Wno-atomic-implicit-seq-cst -Wno-framework-include-private-from-public -Wno-atimport-in-framework-header -Wno-quoted-include-in-framework-header -fdebug-compilation-dir /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -stack-protector 1 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fobjc-runtime=macosx-10.14.0 -fmax-type-align=16 -fdiagnostics-show-option -o CMakeFiles/cmTC_eb461.dir/CMakeCCompilerABI.c.o -x c /usr/local/share/cmake-3.14/Modules/CMakeCCompilerABI.c
+clang -cc1 version 10.0.1 (clang-1001.0.46.4) default target x86_64-apple-darwin18.7.0
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/local/include
+ /Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include
+ /Library/Developer/CommandLineTools/usr/include
+ /usr/include
+ /System/Library/Frameworks (framework directory)
+ /Library/Frameworks (framework directory)
+End of search list.
+Linking C executable cmTC_eb461
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_eb461.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/clang   -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_eb461.dir/CMakeCCompilerABI.c.o  -o cmTC_eb461 
+Apple LLVM version 10.0.1 (clang-1001.0.46.4)
+Target: x86_64-apple-darwin18.7.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch x86_64 -macosx_version_min 10.14.0 -o cmTC_eb461 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_eb461.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/lib/darwin/libclang_rt.osx.a
+@(#)PROGRAM:ld  PROJECT:ld64-450.3
+BUILD 18:16:53 Apr  5 2019
+configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
+Library search paths:
+	/usr/lib
+	/usr/local/lib
+Framework search paths:
+	/Library/Frameworks/
+	/System/Library/Frameworks/
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/usr/local/include]
+    add: [/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include]
+    add: [/Library/Developer/CommandLineTools/usr/include]
+    add: [/usr/include]
+  end of search list found
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include] ==> [/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include]
+  collapse include dir [/Library/Developer/CommandLineTools/usr/include] ==> [/Library/Developer/CommandLineTools/usr/include]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/usr/local/include;/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include;/Library/Developer/CommandLineTools/usr/include;/usr/include]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/make cmTC_eb461/fast ]
+  ignore line: [/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_eb461.dir/build.make CMakeFiles/cmTC_eb461.dir/build]
+  ignore line: [Building C object CMakeFiles/cmTC_eb461.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/Library/Developer/CommandLineTools/usr/bin/clang   -v -Wl,-v -o CMakeFiles/cmTC_eb461.dir/CMakeCCompilerABI.c.o   -c /usr/local/share/cmake-3.14/Modules/CMakeCCompilerABI.c]
+  ignore line: [Apple LLVM version 10.0.1 (clang-1001.0.46.4)]
+  ignore line: [Target: x86_64-apple-darwin18.7.0]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
+  ignore line: [clang: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]]
+  ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple x86_64-apple-macosx10.14.0 -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -mrelax-all -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mthread-model posix -mdisable-fp-elim -fno-strict-return -masm-verbose -munwind-tables -target-cpu penryn -dwarf-column-info -debugger-tuning=lldb -target-linker-version 450.3 -v -coverage-notes-file /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp/CMakeFiles/cmTC_eb461.dir/CMakeCCompilerABI.c.gcno -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/10.0.1 -Wno-atomic-implicit-seq-cst -Wno-framework-include-private-from-public -Wno-atimport-in-framework-header -Wno-quoted-include-in-framework-header -fdebug-compilation-dir /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -stack-protector 1 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fobjc-runtime=macosx-10.14.0 -fmax-type-align=16 -fdiagnostics-show-option -o CMakeFiles/cmTC_eb461.dir/CMakeCCompilerABI.c.o -x c /usr/local/share/cmake-3.14/Modules/CMakeCCompilerABI.c]
+  ignore line: [clang -cc1 version 10.0.1 (clang-1001.0.46.4) default target x86_64-apple-darwin18.7.0]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include]
+  ignore line: [ /Library/Developer/CommandLineTools/usr/include]
+  ignore line: [ /usr/include]
+  ignore line: [ /System/Library/Frameworks (framework directory)]
+  ignore line: [ /Library/Frameworks (framework directory)]
+  ignore line: [End of search list.]
+  ignore line: [Linking C executable cmTC_eb461]
+  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_eb461.dir/link.txt --verbose=1]
+  ignore line: [/Library/Developer/CommandLineTools/usr/bin/clang   -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_eb461.dir/CMakeCCompilerABI.c.o  -o cmTC_eb461 ]
+  ignore line: [Apple LLVM version 10.0.1 (clang-1001.0.46.4)]
+  ignore line: [Target: x86_64-apple-darwin18.7.0]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
+  link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch x86_64 -macosx_version_min 10.14.0 -o cmTC_eb461 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_eb461.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/lib/darwin/libclang_rt.osx.a]
+    arg [/Library/Developer/CommandLineTools/usr/bin/ld] ==> ignore
+    arg [-demangle] ==> ignore
+    arg [-lto_library] ==> ignore, skip following value
+    arg [/Library/Developer/CommandLineTools/usr/lib/libLTO.dylib] ==> skip value of -lto_library
+    arg [-dynamic] ==> ignore
+    arg [-arch] ==> ignore
+    arg [x86_64] ==> ignore
+    arg [-macosx_version_min] ==> ignore
+    arg [10.14.0] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_eb461] ==> ignore
+    arg [-search_paths_first] ==> ignore
+    arg [-headerpad_max_install_names] ==> ignore
+    arg [-v] ==> ignore
+    arg [CMakeFiles/cmTC_eb461.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lSystem] ==> lib [System]
+    arg [/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/lib/darwin/libclang_rt.osx.a] ==> lib [/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/lib/darwin/libclang_rt.osx.a]
+  Library search paths: [;/usr/lib;/usr/local/lib]
+  Framework search paths: [;/Library/Frameworks/;/System/Library/Frameworks/]
+  remove lib [System]
+  remove lib [/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/lib/darwin/libclang_rt.osx.a]
+  collapse library dir [/usr/lib] ==> [/usr/lib]
+  collapse library dir [/usr/local/lib] ==> [/usr/local/lib]
+  collapse framework dir [/Library/Frameworks/] ==> [/Library/Frameworks]
+  collapse framework dir [/System/Library/Frameworks/] ==> [/System/Library/Frameworks]
+  implicit libs: []
+  implicit dirs: [/usr/lib;/usr/local/lib]
+  implicit fwks: [/Library/Frameworks;/System/Library/Frameworks]
+
+
+
+
+Detecting C [-std=c11] compiler features compiled with the following output:
+Change Dir: /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_ab08e/fast 
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_ab08e.dir/build.make CMakeFiles/cmTC_ab08e.dir/build
+Building C object CMakeFiles/cmTC_ab08e.dir/feature_tests.c.o
+/Library/Developer/CommandLineTools/usr/bin/clang   -std=c11 -o CMakeFiles/cmTC_ab08e.dir/feature_tests.c.o   -c /Users/jackson/ParF/parflow/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_ab08e
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ab08e.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/clang   -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_ab08e.dir/feature_tests.c.o  -o cmTC_ab08e 
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:1c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c99] compiler features compiled with the following output:
+Change Dir: /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_63d03/fast 
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_63d03.dir/build.make CMakeFiles/cmTC_63d03.dir/build
+Building C object CMakeFiles/cmTC_63d03.dir/feature_tests.c.o
+/Library/Developer/CommandLineTools/usr/bin/clang   -std=c99 -o CMakeFiles/cmTC_63d03.dir/feature_tests.c.o   -c /Users/jackson/ParF/parflow/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_63d03
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_63d03.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/clang   -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_63d03.dir/feature_tests.c.o  -o cmTC_63d03 
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c90] compiler features compiled with the following output:
+Change Dir: /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_6e148/fast 
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_6e148.dir/build.make CMakeFiles/cmTC_6e148.dir/build
+Building C object CMakeFiles/cmTC_6e148.dir/feature_tests.c.o
+/Library/Developer/CommandLineTools/usr/bin/clang   -std=c90 -o CMakeFiles/cmTC_6e148.dir/feature_tests.c.o   -c /Users/jackson/ParF/parflow/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_6e148
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6e148.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/clang   -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_6e148.dir/feature_tests.c.o  -o cmTC_6e148 
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:0c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:0c_variadic_macros
+Determining if the Fortran compiler works passed with the following output:
+Change Dir: /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_e269c/fast 
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_e269c.dir/build.make CMakeFiles/cmTC_e269c.dir/build
+Building Fortran object CMakeFiles/cmTC_e269c.dir/testFortranCompiler.f.o
+/usr/local/bin/gfortran    -c /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp/testFortranCompiler.f -o CMakeFiles/cmTC_e269c.dir/testFortranCompiler.f.o
+Linking Fortran executable cmTC_e269c
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e269c.dir/link.txt --verbose=1
+/usr/local/bin/gfortran      CMakeFiles/cmTC_e269c.dir/testFortranCompiler.f.o  -o cmTC_e269c 
+
+
+Detecting Fortran compiler ABI info compiled with the following output:
+Change Dir: /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_9d5da/fast 
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_9d5da.dir/build.make CMakeFiles/cmTC_9d5da.dir/build
+Building Fortran object CMakeFiles/cmTC_9d5da.dir/CMakeFortranCompilerABI.F.o
+/usr/local/bin/gfortran   -v -Wl,-v -c /usr/local/share/cmake-3.14/Modules/CMakeFortranCompilerABI.F -o CMakeFiles/cmTC_9d5da.dir/CMakeFortranCompilerABI.F.o
+Using built-in specs.
+COLLECT_GCC=/usr/local/bin/gfortran
+Target: x86_64-apple-darwin17.5.0
+Configured with: ../gcc-8.1.0/configure --enable-languages=c++,fortran
+Thread model: posix
+gcc version 8.1.0 (GCC) 
+COLLECT_GCC_OPTIONS='-v' '-c' '-o' 'CMakeFiles/cmTC_9d5da.dir/CMakeFortranCompilerABI.F.o' '-mmacosx-version-min=10.14.0' '-asm_macosx_version_min=10.14' '-mtune=core2'
+ /usr/local/libexec/gcc/x86_64-apple-darwin17.5.0/8.1.0/f951 /usr/local/share/cmake-3.14/Modules/CMakeFortranCompilerABI.F -ffixed-form -cpp=/var/folders/h9/lfsdv0fs3xjdc05f9bs_ds6h0000gq/T//ccOD0Y7p.f90 -quiet -v -D__DYNAMIC__ /usr/local/share/cmake-3.14/Modules/CMakeFortranCompilerABI.F -fPIC -quiet -dumpbase CMakeFortranCompilerABI.F -mmacosx-version-min=10.14.0 -mtune=core2 -auxbase-strip CMakeFiles/cmTC_9d5da.dir/CMakeFortranCompilerABI.F.o -version -fintrinsic-modules-path /usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/finclude -o /var/folders/h9/lfsdv0fs3xjdc05f9bs_ds6h0000gq/T//ccMPxeq2.s
+GNU Fortran (GCC) version 8.1.0 (x86_64-apple-darwin17.5.0)
+	compiled by GNU C version 8.1.0, GMP version 6.0.0, MPFR version 3.1.2-p10, MPC version 1.0.2, isl version none
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/../../../../x86_64-apple-darwin17.5.0/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/finclude
+ /usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/include
+ /usr/local/include
+ /usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/include-fixed
+ /usr/include
+End of search list.
+GNU Fortran2008 (GCC) version 8.1.0 (x86_64-apple-darwin17.5.0)
+	compiled by GNU C version 8.1.0, GMP version 6.0.0, MPFR version 3.1.2-p10, MPC version 1.0.2, isl version none
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+COLLECT_GCC_OPTIONS='-v' '-c' '-o' 'CMakeFiles/cmTC_9d5da.dir/CMakeFortranCompilerABI.F.o' '-mmacosx-version-min=10.14.0'  '-mtune=core2'
+ as -arch x86_64 -v -force_cpusubtype_ALL -mmacosx-version-min=10.14 -o CMakeFiles/cmTC_9d5da.dir/CMakeFortranCompilerABI.F.o /var/folders/h9/lfsdv0fs3xjdc05f9bs_ds6h0000gq/T//ccMPxeq2.s
+Apple LLVM version 10.0.1 (clang-1001.0.46.4)
+Target: x86_64-apple-darwin18.7.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1as -triple x86_64-apple-macosx10.14.0 -filetype obj -main-file-name ccMPxeq2.s -target-cpu penryn -fdebug-compilation-dir /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp -dwarf-debug-producer Apple LLVM version 10.0.1 (clang-1001.0.46.4) -dwarf-version=4 -mrelocation-model pic -o CMakeFiles/cmTC_9d5da.dir/CMakeFortranCompilerABI.F.o /var/folders/h9/lfsdv0fs3xjdc05f9bs_ds6h0000gq/T//ccMPxeq2.s
+COMPILER_PATH=/usr/local/libexec/gcc/x86_64-apple-darwin17.5.0/8.1.0/:/usr/local/libexec/gcc/x86_64-apple-darwin17.5.0/8.1.0/:/usr/local/libexec/gcc/x86_64-apple-darwin17.5.0/:/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/:/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/
+LIBRARY_PATH=/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/:/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/../../../
+COLLECT_GCC_OPTIONS='-v' '-c' '-o' 'CMakeFiles/cmTC_9d5da.dir/CMakeFortranCompilerABI.F.o' '-mmacosx-version-min=10.14.0'  '-mtune=core2'
+Linking Fortran executable cmTC_9d5da
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9d5da.dir/link.txt --verbose=1
+/usr/local/bin/gfortran   -v -Wl,-v   CMakeFiles/cmTC_9d5da.dir/CMakeFortranCompilerABI.F.o  -o cmTC_9d5da 
+Driving: /usr/local/bin/gfortran -v -Wl,-v CMakeFiles/cmTC_9d5da.dir/CMakeFortranCompilerABI.F.o -o cmTC_9d5da -mmacosx-version-min=10.14.0 -asm_macosx_version_min=10.14 -l gfortran -shared-libgcc
+Using built-in specs.
+COLLECT_GCC=/usr/local/bin/gfortran
+COLLECT_LTO_WRAPPER=/usr/local/libexec/gcc/x86_64-apple-darwin17.5.0/8.1.0/lto-wrapper
+Target: x86_64-apple-darwin17.5.0
+Configured with: ../gcc-8.1.0/configure --enable-languages=c++,fortran
+Thread model: posix
+gcc version 8.1.0 (GCC) 
+Reading specs from /usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/../../../libgfortran.spec
+rename spec lib to liborig
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_9d5da' '-mmacosx-version-min=10.14.0' '-asm_macosx_version_min=10.14' '-shared-libgcc' '-mtune=core2'
+COMPILER_PATH=/usr/local/libexec/gcc/x86_64-apple-darwin17.5.0/8.1.0/:/usr/local/libexec/gcc/x86_64-apple-darwin17.5.0/8.1.0/:/usr/local/libexec/gcc/x86_64-apple-darwin17.5.0/:/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/:/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/
+LIBRARY_PATH=/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/:/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/../../../
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_9d5da' '-mmacosx-version-min=10.14.0' '-asm_macosx_version_min=10.14' '-shared-libgcc' '-mtune=core2'
+ /usr/local/libexec/gcc/x86_64-apple-darwin17.5.0/8.1.0/collect2 -dynamic -arch x86_64 -macosx_version_min 10.14.0 -weak_reference_mismatches non-weak -o cmTC_9d5da -L/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0 -L/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/../../.. -v CMakeFiles/cmTC_9d5da.dir/CMakeFortranCompilerABI.F.o -lgfortran -no_compact_unwind -lSystem -lgcc_ext.10.5 -lgcc -lquadmath -lm -lgcc_ext.10.5 -lgcc -lSystem -v
+collect2 version 8.1.0
+/usr/bin/ld -dynamic -arch x86_64 -macosx_version_min 10.14.0 -weak_reference_mismatches non-weak -o cmTC_9d5da -L/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0 -L/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/../../.. -v CMakeFiles/cmTC_9d5da.dir/CMakeFortranCompilerABI.F.o -lgfortran -no_compact_unwind -lSystem -lgcc_ext.10.5 -lgcc -lquadmath -lm -lgcc_ext.10.5 -lgcc -lSystem -v
+@(#)PROGRAM:ld  PROJECT:ld64-450.3
+BUILD 18:16:53 Apr  5 2019
+configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
+@(#)PROGRAM:ld  PROJECT:ld64-450.3
+BUILD 18:16:53 Apr  5 2019
+configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
+Library search paths:
+	/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0
+	/usr/local/lib
+	/usr/lib
+	/usr/local/lib
+Framework search paths:
+	/Library/Frameworks/
+	/System/Library/Frameworks/
+ /usr/bin/nm -n CMakeFiles/cmTC_9d5da.dir/CMakeFortranCompilerABI.F.o
+
+
+Parsed Fortran implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/finclude]
+    add: [/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/include]
+    add: [/usr/local/include]
+    add: [/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/include-fixed]
+    add: [/usr/include]
+  end of search list found
+  collapse include dir [/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/finclude] ==> [/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/finclude]
+  collapse include dir [/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/include] ==> [/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/include]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/include-fixed] ==> [/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/include-fixed]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/finclude;/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/include;/usr/local/include;/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/include-fixed;/usr/include]
+
+
+Parsed Fortran implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/make cmTC_9d5da/fast ]
+  ignore line: [/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_9d5da.dir/build.make CMakeFiles/cmTC_9d5da.dir/build]
+  ignore line: [Building Fortran object CMakeFiles/cmTC_9d5da.dir/CMakeFortranCompilerABI.F.o]
+  ignore line: [/usr/local/bin/gfortran   -v -Wl,-v -c /usr/local/share/cmake-3.14/Modules/CMakeFortranCompilerABI.F -o CMakeFiles/cmTC_9d5da.dir/CMakeFortranCompilerABI.F.o]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/local/bin/gfortran]
+  ignore line: [Target: x86_64-apple-darwin17.5.0]
+  ignore line: [Configured with: ../gcc-8.1.0/configure --enable-languages=c++,fortran]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 8.1.0 (GCC) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-c' '-o' 'CMakeFiles/cmTC_9d5da.dir/CMakeFortranCompilerABI.F.o' '-mmacosx-version-min=10.14.0' '-asm_macosx_version_min=10.14' '-mtune=core2']
+  ignore line: [ /usr/local/libexec/gcc/x86_64-apple-darwin17.5.0/8.1.0/f951 /usr/local/share/cmake-3.14/Modules/CMakeFortranCompilerABI.F -ffixed-form -cpp=/var/folders/h9/lfsdv0fs3xjdc05f9bs_ds6h0000gq/T//ccOD0Y7p.f90 -quiet -v -D__DYNAMIC__ /usr/local/share/cmake-3.14/Modules/CMakeFortranCompilerABI.F -fPIC -quiet -dumpbase CMakeFortranCompilerABI.F -mmacosx-version-min=10.14.0 -mtune=core2 -auxbase-strip CMakeFiles/cmTC_9d5da.dir/CMakeFortranCompilerABI.F.o -version -fintrinsic-modules-path /usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/finclude -o /var/folders/h9/lfsdv0fs3xjdc05f9bs_ds6h0000gq/T//ccMPxeq2.s]
+  ignore line: [GNU Fortran (GCC) version 8.1.0 (x86_64-apple-darwin17.5.0)]
+  ignore line: [	compiled by GNU C version 8.1.0, GMP version 6.0.0, MPFR version 3.1.2-p10, MPC version 1.0.2, isl version none]
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring nonexistent directory "/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/../../../../x86_64-apple-darwin17.5.0/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/finclude]
+  ignore line: [ /usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/include]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/include-fixed]
+  ignore line: [ /usr/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU Fortran2008 (GCC) version 8.1.0 (x86_64-apple-darwin17.5.0)]
+  ignore line: [	compiled by GNU C version 8.1.0, GMP version 6.0.0, MPFR version 3.1.2-p10, MPC version 1.0.2, isl version none]
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-c' '-o' 'CMakeFiles/cmTC_9d5da.dir/CMakeFortranCompilerABI.F.o' '-mmacosx-version-min=10.14.0'  '-mtune=core2']
+  ignore line: [ as -arch x86_64 -v -force_cpusubtype_ALL -mmacosx-version-min=10.14 -o CMakeFiles/cmTC_9d5da.dir/CMakeFortranCompilerABI.F.o /var/folders/h9/lfsdv0fs3xjdc05f9bs_ds6h0000gq/T//ccMPxeq2.s]
+  ignore line: [Apple LLVM version 10.0.1 (clang-1001.0.46.4)]
+  ignore line: [Target: x86_64-apple-darwin18.7.0]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
+  ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1as -triple x86_64-apple-macosx10.14.0 -filetype obj -main-file-name ccMPxeq2.s -target-cpu penryn -fdebug-compilation-dir /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp -dwarf-debug-producer Apple LLVM version 10.0.1 (clang-1001.0.46.4) -dwarf-version=4 -mrelocation-model pic -o CMakeFiles/cmTC_9d5da.dir/CMakeFortranCompilerABI.F.o /var/folders/h9/lfsdv0fs3xjdc05f9bs_ds6h0000gq/T//ccMPxeq2.s]
+  ignore line: [COMPILER_PATH=/usr/local/libexec/gcc/x86_64-apple-darwin17.5.0/8.1.0/:/usr/local/libexec/gcc/x86_64-apple-darwin17.5.0/8.1.0/:/usr/local/libexec/gcc/x86_64-apple-darwin17.5.0/:/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/:/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/]
+  ignore line: [LIBRARY_PATH=/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/:/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/../../../]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-c' '-o' 'CMakeFiles/cmTC_9d5da.dir/CMakeFortranCompilerABI.F.o' '-mmacosx-version-min=10.14.0'  '-mtune=core2']
+  ignore line: [Linking Fortran executable cmTC_9d5da]
+  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9d5da.dir/link.txt --verbose=1]
+  ignore line: [/usr/local/bin/gfortran   -v -Wl,-v   CMakeFiles/cmTC_9d5da.dir/CMakeFortranCompilerABI.F.o  -o cmTC_9d5da ]
+  ignore line: [Driving: /usr/local/bin/gfortran -v -Wl,-v CMakeFiles/cmTC_9d5da.dir/CMakeFortranCompilerABI.F.o -o cmTC_9d5da -mmacosx-version-min=10.14.0 -asm_macosx_version_min=10.14 -l gfortran -shared-libgcc]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/local/bin/gfortran]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/local/libexec/gcc/x86_64-apple-darwin17.5.0/8.1.0/lto-wrapper]
+  ignore line: [Target: x86_64-apple-darwin17.5.0]
+  ignore line: [Configured with: ../gcc-8.1.0/configure --enable-languages=c++,fortran]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 8.1.0 (GCC) ]
+  ignore line: [Reading specs from /usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/../../../libgfortran.spec]
+  ignore line: [rename spec lib to liborig]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_9d5da' '-mmacosx-version-min=10.14.0' '-asm_macosx_version_min=10.14' '-shared-libgcc' '-mtune=core2']
+  ignore line: [COMPILER_PATH=/usr/local/libexec/gcc/x86_64-apple-darwin17.5.0/8.1.0/:/usr/local/libexec/gcc/x86_64-apple-darwin17.5.0/8.1.0/:/usr/local/libexec/gcc/x86_64-apple-darwin17.5.0/:/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/:/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/]
+  ignore line: [LIBRARY_PATH=/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/:/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/../../../]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_9d5da' '-mmacosx-version-min=10.14.0' '-asm_macosx_version_min=10.14' '-shared-libgcc' '-mtune=core2']
+  link line: [ /usr/local/libexec/gcc/x86_64-apple-darwin17.5.0/8.1.0/collect2 -dynamic -arch x86_64 -macosx_version_min 10.14.0 -weak_reference_mismatches non-weak -o cmTC_9d5da -L/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0 -L/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/../../.. -v CMakeFiles/cmTC_9d5da.dir/CMakeFortranCompilerABI.F.o -lgfortran -no_compact_unwind -lSystem -lgcc_ext.10.5 -lgcc -lquadmath -lm -lgcc_ext.10.5 -lgcc -lSystem -v]
+    arg [/usr/local/libexec/gcc/x86_64-apple-darwin17.5.0/8.1.0/collect2] ==> ignore
+    arg [-dynamic] ==> ignore
+    arg [-arch] ==> ignore
+    arg [x86_64] ==> ignore
+    arg [-macosx_version_min] ==> ignore
+    arg [10.14.0] ==> ignore
+    arg [-weak_reference_mismatches] ==> ignore
+    arg [non-weak] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_9d5da] ==> ignore
+    arg [-L/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0] ==> dir [/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0]
+    arg [-L/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/../../..] ==> dir [/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/../../..]
+    arg [-v] ==> ignore
+    arg [CMakeFiles/cmTC_9d5da.dir/CMakeFortranCompilerABI.F.o] ==> ignore
+    arg [-lgfortran] ==> lib [gfortran]
+    arg [-no_compact_unwind] ==> ignore
+    arg [-lSystem] ==> lib [System]
+    arg [-lgcc_ext.10.5] ==> lib [gcc_ext.10.5]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lquadmath] ==> lib [quadmath]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_ext.10.5] ==> lib [gcc_ext.10.5]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lSystem] ==> lib [System]
+    arg [-v] ==> ignore
+  Library search paths: [;/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0;/usr/local/lib;/usr/lib;/usr/local/lib]
+  Framework search paths: [;/Library/Frameworks/;/System/Library/Frameworks/]
+  remove lib [System]
+  remove lib [System]
+  collapse library dir [/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0] ==> [/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0]
+  collapse library dir [/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0/../../..] ==> [/usr/local/lib]
+  collapse library dir [/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0] ==> [/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0]
+  collapse library dir [/usr/local/lib] ==> [/usr/local/lib]
+  collapse library dir [/usr/lib] ==> [/usr/lib]
+  collapse library dir [/usr/local/lib] ==> [/usr/local/lib]
+  collapse framework dir [/Library/Frameworks/] ==> [/Library/Frameworks]
+  collapse framework dir [/System/Library/Frameworks/] ==> [/System/Library/Frameworks]
+  implicit libs: [gfortran;gcc_ext.10.5;gcc;quadmath;m;gcc_ext.10.5;gcc]
+  implicit dirs: [/usr/local/lib/gcc/x86_64-apple-darwin17.5.0/8.1.0;/usr/local/lib;/usr/lib]
+  implicit fwks: [/Library/Frameworks;/System/Library/Frameworks]
+
+
+Determining if the Fortran compiler supports Fortran 90 passed with the following output:
+Change Dir: /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_08fc1/fast 
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_08fc1.dir/build.make CMakeFiles/cmTC_08fc1.dir/build
+Building Fortran object CMakeFiles/cmTC_08fc1.dir/testFortranCompilerF90.f90.o
+/usr/local/bin/gfortran    -c /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp/testFortranCompilerF90.f90 -o CMakeFiles/cmTC_08fc1.dir/testFortranCompilerF90.f90.o
+Linking Fortran executable cmTC_08fc1
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_08fc1.dir/link.txt --verbose=1
+/usr/local/bin/gfortran      CMakeFiles/cmTC_08fc1.dir/testFortranCompilerF90.f90.o  -o cmTC_08fc1 
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_0fbb3/fast 
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_0fbb3.dir/build.make CMakeFiles/cmTC_0fbb3.dir/build
+Building CXX object CMakeFiles/cmTC_0fbb3.dir/testCXXCompiler.cxx.o
+/Library/Developer/CommandLineTools/usr/bin/clang++     -o CMakeFiles/cmTC_0fbb3.dir/testCXXCompiler.cxx.o -c /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_0fbb3
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0fbb3.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/clang++    -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_0fbb3.dir/testCXXCompiler.cxx.o  -o cmTC_0fbb3 
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_6d47b/fast 
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_6d47b.dir/build.make CMakeFiles/cmTC_6d47b.dir/build
+Building CXX object CMakeFiles/cmTC_6d47b.dir/CMakeCXXCompilerABI.cpp.o
+/Library/Developer/CommandLineTools/usr/bin/clang++    -v -Wl,-v -o CMakeFiles/cmTC_6d47b.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-3.14/Modules/CMakeCXXCompilerABI.cpp
+Apple LLVM version 10.0.1 (clang-1001.0.46.4)
+Target: x86_64-apple-darwin18.7.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+clang: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
+ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple x86_64-apple-macosx10.14.0 -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -mrelax-all -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mthread-model posix -mdisable-fp-elim -fno-strict-return -masm-verbose -munwind-tables -target-cpu penryn -dwarf-column-info -debugger-tuning=lldb -target-linker-version 450.3 -v -coverage-notes-file /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp/CMakeFiles/cmTC_6d47b.dir/CMakeCXXCompilerABI.cpp.gcno -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/10.0.1 -stdlib=libc++ -Wno-atomic-implicit-seq-cst -Wno-framework-include-private-from-public -Wno-atimport-in-framework-header -Wno-quoted-include-in-framework-header -fdeprecated-macro -fdebug-compilation-dir /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -stack-protector 1 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fobjc-runtime=macosx-10.14.0 -fcxx-exceptions -fexceptions -fmax-type-align=16 -fdiagnostics-show-option -o CMakeFiles/cmTC_6d47b.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/local/share/cmake-3.14/Modules/CMakeCXXCompilerABI.cpp
+clang -cc1 version 10.0.1 (clang-1001.0.46.4) default target x86_64-apple-darwin18.7.0
+ignoring nonexistent directory "/usr/include/c++/v1"
+#include "..." search starts here:
+#include <...> search starts here:
+ /Library/Developer/CommandLineTools/usr/include/c++/v1
+ /usr/local/include
+ /Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include
+ /Library/Developer/CommandLineTools/usr/include
+ /usr/include
+ /System/Library/Frameworks (framework directory)
+ /Library/Frameworks (framework directory)
+End of search list.
+Linking CXX executable cmTC_6d47b
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6d47b.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/clang++    -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_6d47b.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_6d47b 
+Apple LLVM version 10.0.1 (clang-1001.0.46.4)
+Target: x86_64-apple-darwin18.7.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch x86_64 -macosx_version_min 10.14.0 -o cmTC_6d47b -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_6d47b.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/lib/darwin/libclang_rt.osx.a
+@(#)PROGRAM:ld  PROJECT:ld64-450.3
+BUILD 18:16:53 Apr  5 2019
+configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
+Library search paths:
+	/usr/lib
+	/usr/local/lib
+Framework search paths:
+	/Library/Frameworks/
+	/System/Library/Frameworks/
+
+
+Parsed CXX implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/Library/Developer/CommandLineTools/usr/include/c++/v1]
+    add: [/usr/local/include]
+    add: [/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include]
+    add: [/Library/Developer/CommandLineTools/usr/include]
+    add: [/usr/include]
+  end of search list found
+  collapse include dir [/Library/Developer/CommandLineTools/usr/include/c++/v1] ==> [/Library/Developer/CommandLineTools/usr/include/c++/v1]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include] ==> [/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include]
+  collapse include dir [/Library/Developer/CommandLineTools/usr/include] ==> [/Library/Developer/CommandLineTools/usr/include]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/Library/Developer/CommandLineTools/usr/include/c++/v1;/usr/local/include;/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include;/Library/Developer/CommandLineTools/usr/include;/usr/include]
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/make cmTC_6d47b/fast ]
+  ignore line: [/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_6d47b.dir/build.make CMakeFiles/cmTC_6d47b.dir/build]
+  ignore line: [Building CXX object CMakeFiles/cmTC_6d47b.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/Library/Developer/CommandLineTools/usr/bin/clang++    -v -Wl,-v -o CMakeFiles/cmTC_6d47b.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-3.14/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Apple LLVM version 10.0.1 (clang-1001.0.46.4)]
+  ignore line: [Target: x86_64-apple-darwin18.7.0]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
+  ignore line: [clang: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]]
+  ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple x86_64-apple-macosx10.14.0 -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -mrelax-all -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mthread-model posix -mdisable-fp-elim -fno-strict-return -masm-verbose -munwind-tables -target-cpu penryn -dwarf-column-info -debugger-tuning=lldb -target-linker-version 450.3 -v -coverage-notes-file /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp/CMakeFiles/cmTC_6d47b.dir/CMakeCXXCompilerABI.cpp.gcno -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/10.0.1 -stdlib=libc++ -Wno-atomic-implicit-seq-cst -Wno-framework-include-private-from-public -Wno-atimport-in-framework-header -Wno-quoted-include-in-framework-header -fdeprecated-macro -fdebug-compilation-dir /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -stack-protector 1 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fobjc-runtime=macosx-10.14.0 -fcxx-exceptions -fexceptions -fmax-type-align=16 -fdiagnostics-show-option -o CMakeFiles/cmTC_6d47b.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/local/share/cmake-3.14/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [clang -cc1 version 10.0.1 (clang-1001.0.46.4) default target x86_64-apple-darwin18.7.0]
+  ignore line: [ignoring nonexistent directory "/usr/include/c++/v1"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /Library/Developer/CommandLineTools/usr/include/c++/v1]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include]
+  ignore line: [ /Library/Developer/CommandLineTools/usr/include]
+  ignore line: [ /usr/include]
+  ignore line: [ /System/Library/Frameworks (framework directory)]
+  ignore line: [ /Library/Frameworks (framework directory)]
+  ignore line: [End of search list.]
+  ignore line: [Linking CXX executable cmTC_6d47b]
+  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6d47b.dir/link.txt --verbose=1]
+  ignore line: [/Library/Developer/CommandLineTools/usr/bin/clang++    -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_6d47b.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_6d47b ]
+  ignore line: [Apple LLVM version 10.0.1 (clang-1001.0.46.4)]
+  ignore line: [Target: x86_64-apple-darwin18.7.0]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
+  link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch x86_64 -macosx_version_min 10.14.0 -o cmTC_6d47b -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_6d47b.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/lib/darwin/libclang_rt.osx.a]
+    arg [/Library/Developer/CommandLineTools/usr/bin/ld] ==> ignore
+    arg [-demangle] ==> ignore
+    arg [-lto_library] ==> ignore, skip following value
+    arg [/Library/Developer/CommandLineTools/usr/lib/libLTO.dylib] ==> skip value of -lto_library
+    arg [-dynamic] ==> ignore
+    arg [-arch] ==> ignore
+    arg [x86_64] ==> ignore
+    arg [-macosx_version_min] ==> ignore
+    arg [10.14.0] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_6d47b] ==> ignore
+    arg [-search_paths_first] ==> ignore
+    arg [-headerpad_max_install_names] ==> ignore
+    arg [-v] ==> ignore
+    arg [CMakeFiles/cmTC_6d47b.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lc++] ==> lib [c++]
+    arg [-lSystem] ==> lib [System]
+    arg [/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/lib/darwin/libclang_rt.osx.a] ==> lib [/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/lib/darwin/libclang_rt.osx.a]
+  Library search paths: [;/usr/lib;/usr/local/lib]
+  Framework search paths: [;/Library/Frameworks/;/System/Library/Frameworks/]
+  remove lib [System]
+  remove lib [/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/lib/darwin/libclang_rt.osx.a]
+  collapse library dir [/usr/lib] ==> [/usr/lib]
+  collapse library dir [/usr/local/lib] ==> [/usr/local/lib]
+  collapse framework dir [/Library/Frameworks/] ==> [/Library/Frameworks]
+  collapse framework dir [/System/Library/Frameworks/] ==> [/System/Library/Frameworks]
+  implicit libs: [c++]
+  implicit dirs: [/usr/lib;/usr/local/lib]
+  implicit fwks: [/Library/Frameworks;/System/Library/Frameworks]
+
+
+
+
+Detecting CXX [-std=c++1z] compiler features compiled with the following output:
+Change Dir: /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_d947a/fast 
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_d947a.dir/build.make CMakeFiles/cmTC_d947a.dir/build
+Building CXX object CMakeFiles/cmTC_d947a.dir/feature_tests.cxx.o
+/Library/Developer/CommandLineTools/usr/bin/clang++    -std=c++1z -o CMakeFiles/cmTC_d947a.dir/feature_tests.cxx.o -c /Users/jackson/ParF/parflow/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_d947a
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d947a.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/clang++    -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_d947a.dir/feature_tests.cxx.o  -o cmTC_d947a 
+
+
+    Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:1cxx_alignas
+    Feature record: CXX_FEATURE:1cxx_alignof
+    Feature record: CXX_FEATURE:1cxx_attributes
+    Feature record: CXX_FEATURE:1cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:1cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_constexpr
+    Feature record: CXX_FEATURE:1cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:1cxx_decltype_auto
+    Feature record: CXX_FEATURE:1cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:1cxx_deleted_functions
+    Feature record: CXX_FEATURE:1cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:1cxx_func_identifier
+    Feature record: CXX_FEATURE:1cxx_generalized_initializers
+    Feature record: CXX_FEATURE:1cxx_generic_lambdas
+    Feature record: CXX_FEATURE:1cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:1cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:1cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:1cxx_noexcept
+    Feature record: CXX_FEATURE:1cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:1cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:1cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:1cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:1cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:1cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:1cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:1cxx_user_literals
+    Feature record: CXX_FEATURE:1cxx_variable_templates
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates
+
+
+Detecting CXX [-std=c++14] compiler features compiled with the following output:
+Change Dir: /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_651bb/fast 
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_651bb.dir/build.make CMakeFiles/cmTC_651bb.dir/build
+Building CXX object CMakeFiles/cmTC_651bb.dir/feature_tests.cxx.o
+/Library/Developer/CommandLineTools/usr/bin/clang++    -std=c++14 -o CMakeFiles/cmTC_651bb.dir/feature_tests.cxx.o -c /Users/jackson/ParF/parflow/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_651bb
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_651bb.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/clang++    -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_651bb.dir/feature_tests.cxx.o  -o cmTC_651bb 
+
+
+    Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:1cxx_alignas
+    Feature record: CXX_FEATURE:1cxx_alignof
+    Feature record: CXX_FEATURE:1cxx_attributes
+    Feature record: CXX_FEATURE:1cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:1cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_constexpr
+    Feature record: CXX_FEATURE:1cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:1cxx_decltype_auto
+    Feature record: CXX_FEATURE:1cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:1cxx_deleted_functions
+    Feature record: CXX_FEATURE:1cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:1cxx_func_identifier
+    Feature record: CXX_FEATURE:1cxx_generalized_initializers
+    Feature record: CXX_FEATURE:1cxx_generic_lambdas
+    Feature record: CXX_FEATURE:1cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:1cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:1cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:1cxx_noexcept
+    Feature record: CXX_FEATURE:1cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:1cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:1cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:1cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:1cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:1cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:1cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:1cxx_user_literals
+    Feature record: CXX_FEATURE:1cxx_variable_templates
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates
+
+
+Detecting CXX [-std=c++11] compiler features compiled with the following output:
+Change Dir: /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_2c7dc/fast 
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_2c7dc.dir/build.make CMakeFiles/cmTC_2c7dc.dir/build
+Building CXX object CMakeFiles/cmTC_2c7dc.dir/feature_tests.cxx.o
+/Library/Developer/CommandLineTools/usr/bin/clang++    -std=c++11 -o CMakeFiles/cmTC_2c7dc.dir/feature_tests.cxx.o -c /Users/jackson/ParF/parflow/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_2c7dc
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2c7dc.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/clang++    -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_2c7dc.dir/feature_tests.cxx.o  -o cmTC_2c7dc 
+
+
+    Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:1cxx_alignas
+    Feature record: CXX_FEATURE:1cxx_alignof
+    Feature record: CXX_FEATURE:1cxx_attributes
+    Feature record: CXX_FEATURE:0cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:0cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_constexpr
+    Feature record: CXX_FEATURE:0cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:0cxx_decltype_auto
+    Feature record: CXX_FEATURE:1cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:1cxx_deleted_functions
+    Feature record: CXX_FEATURE:0cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:1cxx_func_identifier
+    Feature record: CXX_FEATURE:1cxx_generalized_initializers
+    Feature record: CXX_FEATURE:0cxx_generic_lambdas
+    Feature record: CXX_FEATURE:1cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:1cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:0cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:1cxx_noexcept
+    Feature record: CXX_FEATURE:1cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:1cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:0cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:0cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:1cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:1cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:1cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:1cxx_user_literals
+    Feature record: CXX_FEATURE:0cxx_variable_templates
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates
+
+
+Detecting CXX [-std=c++98] compiler features compiled with the following output:
+Change Dir: /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_bec9b/fast 
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_bec9b.dir/build.make CMakeFiles/cmTC_bec9b.dir/build
+Building CXX object CMakeFiles/cmTC_bec9b.dir/feature_tests.cxx.o
+/Library/Developer/CommandLineTools/usr/bin/clang++    -std=c++98 -o CMakeFiles/cmTC_bec9b.dir/feature_tests.cxx.o -c /Users/jackson/ParF/parflow/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_bec9b
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bec9b.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/clang++    -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_bec9b.dir/feature_tests.cxx.o  -o cmTC_bec9b 
+
+
+    Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:0cxx_alias_templates
+    Feature record: CXX_FEATURE:0cxx_alignas
+    Feature record: CXX_FEATURE:0cxx_alignof
+    Feature record: CXX_FEATURE:0cxx_attributes
+    Feature record: CXX_FEATURE:0cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:0cxx_auto_type
+    Feature record: CXX_FEATURE:0cxx_binary_literals
+    Feature record: CXX_FEATURE:0cxx_constexpr
+    Feature record: CXX_FEATURE:0cxx_contextual_conversions
+    Feature record: CXX_FEATURE:0cxx_decltype
+    Feature record: CXX_FEATURE:0cxx_decltype_auto
+    Feature record: CXX_FEATURE:0cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:0cxx_default_function_template_args
+    Feature record: CXX_FEATURE:0cxx_defaulted_functions
+    Feature record: CXX_FEATURE:0cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:0cxx_delegating_constructors
+    Feature record: CXX_FEATURE:0cxx_deleted_functions
+    Feature record: CXX_FEATURE:0cxx_digit_separators
+    Feature record: CXX_FEATURE:0cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:0cxx_explicit_conversions
+    Feature record: CXX_FEATURE:0cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:0cxx_extern_templates
+    Feature record: CXX_FEATURE:0cxx_final
+    Feature record: CXX_FEATURE:0cxx_func_identifier
+    Feature record: CXX_FEATURE:0cxx_generalized_initializers
+    Feature record: CXX_FEATURE:0cxx_generic_lambdas
+    Feature record: CXX_FEATURE:0cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:0cxx_inline_namespaces
+    Feature record: CXX_FEATURE:0cxx_lambdas
+    Feature record: CXX_FEATURE:0cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:0cxx_local_type_template_args
+    Feature record: CXX_FEATURE:0cxx_long_long_type
+    Feature record: CXX_FEATURE:0cxx_noexcept
+    Feature record: CXX_FEATURE:0cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:0cxx_nullptr
+    Feature record: CXX_FEATURE:0cxx_override
+    Feature record: CXX_FEATURE:0cxx_range_for
+    Feature record: CXX_FEATURE:0cxx_raw_string_literals
+    Feature record: CXX_FEATURE:0cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:0cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:0cxx_return_type_deduction
+    Feature record: CXX_FEATURE:0cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:0cxx_rvalue_references
+    Feature record: CXX_FEATURE:0cxx_sizeof_member
+    Feature record: CXX_FEATURE:0cxx_static_assert
+    Feature record: CXX_FEATURE:0cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:0cxx_thread_local
+    Feature record: CXX_FEATURE:0cxx_trailing_return_types
+    Feature record: CXX_FEATURE:0cxx_unicode_literals
+    Feature record: CXX_FEATURE:0cxx_uniform_initialization
+    Feature record: CXX_FEATURE:0cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:0cxx_user_literals
+    Feature record: CXX_FEATURE:0cxx_variable_templates
+    Feature record: CXX_FEATURE:0cxx_variadic_macros
+    Feature record: CXX_FEATURE:0cxx_variadic_templates
+Performing Fortran SOURCE FILE Test FORTRAN_77_WORKS succeeded with the following output:
+Change Dir: /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_c7ef6/fast 
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_c7ef6.dir/build.make CMakeFiles/cmTC_c7ef6.dir/build
+Building Fortran object CMakeFiles/cmTC_c7ef6.dir/src.F.o
+/usr/local/bin/gfortran   -DFORTRAN_77_WORKS   -c /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp/src.F -o CMakeFiles/cmTC_c7ef6.dir/src.F.o
+Linking Fortran executable cmTC_c7ef6
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c7ef6.dir/link.txt --verbose=1
+/usr/local/bin/gfortran     -DFORTRAN_77_WORKS CMakeFiles/cmTC_c7ef6.dir/src.F.o  -o cmTC_c7ef6 
+
+Source file was:
+      program main
+      implicit none
+      write ( *, '(a)' ) '  Hello, world!'
+      stop
+      end
+Performing Fortran SOURCE FILE Test FORTRAN_F90_WORKS succeeded with the following output:
+Change Dir: /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_e072d/fast 
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_e072d.dir/build.make CMakeFiles/cmTC_e072d.dir/build
+Building Fortran object CMakeFiles/cmTC_e072d.dir/src.F.o
+/usr/local/bin/gfortran   -DFORTRAN_F90_WORKS  -ffree-form   -c /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp/src.F -o CMakeFiles/cmTC_e072d.dir/src.F.o
+Linking Fortran executable cmTC_e072d
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e072d.dir/link.txt --verbose=1
+/usr/local/bin/gfortran     -DFORTRAN_F90_WORKS  -ffree-form CMakeFiles/cmTC_e072d.dir/src.F.o  -o cmTC_e072d 
+
+Source file was:
+program main
+  implicit none
+
+  write ( *, '(a)' ) '  Hello, world!'
+
+  stop
+end
+Performing Fortran SOURCE FILE Test HAVE_FC_ACCESS_STREAM succeeded with the following output:
+Change Dir: /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_9e71a/fast 
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_9e71a.dir/build.make CMakeFiles/cmTC_9e71a.dir/build
+Building Fortran object CMakeFiles/cmTC_9e71a.dir/src.F.o
+/usr/local/bin/gfortran   -DHAVE_FC_ACCESS_STREAM  -ffree-form   -c /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp/src.F -o CMakeFiles/cmTC_9e71a.dir/src.F.o
+Linking Fortran executable cmTC_9e71a
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9e71a.dir/link.txt --verbose=1
+/usr/local/bin/gfortran     -DHAVE_FC_ACCESS_STREAM  -ffree-form CMakeFiles/cmTC_9e71a.dir/src.F.o  -o cmTC_9e71a 
+
+Source file was:
+program freeform
+   open(10, file='test.bin', access='stream', form='unformatted', status='replace')
+   write(10) "first"
+   write(10) "second"
+   close(UNIT=10)
+ end program freeform
+Performing Fortran SOURCE FILE Test PARFLOW_FORTRAN_IMPLICIT_NONE_1 succeeded with the following output:
+Change Dir: /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_11cb1/fast 
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_11cb1.dir/build.make CMakeFiles/cmTC_11cb1.dir/build
+Building Fortran object CMakeFiles/cmTC_11cb1.dir/src.F.o
+/usr/local/bin/gfortran   -DPARFLOW_FORTRAN_IMPLICIT_NONE_1  -ffree-form   -fimplicit-none -c /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp/src.F -o CMakeFiles/cmTC_11cb1.dir/src.F.o
+Linking Fortran executable cmTC_11cb1
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_11cb1.dir/link.txt --verbose=1
+/usr/local/bin/gfortran     -DPARFLOW_FORTRAN_IMPLICIT_NONE_1  -ffree-form CMakeFiles/cmTC_11cb1.dir/src.F.o  -o cmTC_11cb1 
+
+Source file was:
+       program test
+       stop
+       end program
+Performing C SOURCE FILE Test C_WORKS succeeded with the following output:
+Change Dir: /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_f7710/fast 
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_f7710.dir/build.make CMakeFiles/cmTC_f7710.dir/build
+Building C object CMakeFiles/cmTC_f7710.dir/src.c.o
+/Library/Developer/CommandLineTools/usr/bin/clang   -DC_WORKS   -std=gnu11 -o CMakeFiles/cmTC_f7710.dir/src.c.o   -c /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_f7710
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f7710.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/clang  -DC_WORKS -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_f7710.dir/src.c.o  -o cmTC_f7710 
+
+Source file was:
+int main(int argc, char **argv) {return 0;}
+Determining if the include file sys/types.h exists passed with the following output:
+Change Dir: /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_0322b/fast 
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_0322b.dir/build.make CMakeFiles/cmTC_0322b.dir/build
+Building C object CMakeFiles/cmTC_0322b.dir/CheckIncludeFile.c.o
+/Library/Developer/CommandLineTools/usr/bin/clang   -std=gnu11 -o CMakeFiles/cmTC_0322b.dir/CheckIncludeFile.c.o   -c /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_0322b
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0322b.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/clang   -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_0322b.dir/CheckIncludeFile.c.o  -o cmTC_0322b 
+
+
+Determining if the include file stdint.h exists passed with the following output:
+Change Dir: /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_bb4de/fast 
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_bb4de.dir/build.make CMakeFiles/cmTC_bb4de.dir/build
+Building C object CMakeFiles/cmTC_bb4de.dir/CheckIncludeFile.c.o
+/Library/Developer/CommandLineTools/usr/bin/clang   -std=gnu11 -o CMakeFiles/cmTC_bb4de.dir/CheckIncludeFile.c.o   -c /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_bb4de
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bb4de.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/clang   -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_bb4de.dir/CheckIncludeFile.c.o  -o cmTC_bb4de 
+
+
+Determining if the include file stddef.h exists passed with the following output:
+Change Dir: /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_80dec/fast 
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_80dec.dir/build.make CMakeFiles/cmTC_80dec.dir/build
+Building C object CMakeFiles/cmTC_80dec.dir/CheckIncludeFile.c.o
+/Library/Developer/CommandLineTools/usr/bin/clang   -std=gnu11 -o CMakeFiles/cmTC_80dec.dir/CheckIncludeFile.c.o   -c /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_80dec
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_80dec.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/clang   -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_80dec.dir/CheckIncludeFile.c.o  -o cmTC_80dec 
+
+
+Determining size of unsigned short passed with the following output:
+Change Dir: /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_319a8/fast 
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_319a8.dir/build.make CMakeFiles/cmTC_319a8.dir/build
+Building C object CMakeFiles/cmTC_319a8.dir/CMAKE_SIZEOF_UNSIGNED_SHORT.c.o
+/Library/Developer/CommandLineTools/usr/bin/clang   -std=gnu11 -o CMakeFiles/cmTC_319a8.dir/CMAKE_SIZEOF_UNSIGNED_SHORT.c.o   -c /Users/jackson/ParF/parflow/build/CMakeFiles/CheckTypeSize/CMAKE_SIZEOF_UNSIGNED_SHORT.c
+Linking C executable cmTC_319a8
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_319a8.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/clang   -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_319a8.dir/CMAKE_SIZEOF_UNSIGNED_SHORT.c.o  -o cmTC_319a8 
+
+
+Determining if the system is big endian passed with the following output:
+Change Dir: /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_d41e2/fast 
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_d41e2.dir/build.make CMakeFiles/cmTC_d41e2.dir/build
+Building C object CMakeFiles/cmTC_d41e2.dir/TestEndianess.c.o
+/Library/Developer/CommandLineTools/usr/bin/clang   -std=gnu11 -o CMakeFiles/cmTC_d41e2.dir/TestEndianess.c.o   -c /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp/TestEndianess.c
+Linking C executable cmTC_d41e2
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d41e2.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/clang   -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_d41e2.dir/TestEndianess.c.o  -o cmTC_d41e2 
+
+TestEndianess.c:
+/* A 16 bit integer is required. */
+typedef unsigned short cmakeint16;
+
+/* On a little endian machine, these 16bit ints will give "THIS IS LITTLE ENDIAN."
+   On a big endian machine the characters will be exchanged pairwise. */
+const cmakeint16 info_little[] =  {0x4854, 0x5349, 0x4920, 0x2053, 0x494c, 0x5454, 0x454c, 0x4520, 0x444e, 0x4149, 0x2e4e, 0x0000};
+
+/* on a big endian machine, these 16bit ints will give "THIS IS BIG ENDIAN."
+   On a little endian machine the characters will be exchanged pairwise. */
+const cmakeint16 info_big[] =     {0x5448, 0x4953, 0x2049, 0x5320, 0x4249, 0x4720, 0x454e, 0x4449, 0x414e, 0x2e2e, 0x0000};
+
+#ifdef __CLASSIC_C__
+int main(argc, argv) int argc; char *argv[];
+#else
+int main(int argc, char *argv[])
+#endif
+{
+  int require = 0;
+  require += info_little[argc];
+  require += info_big[argc];
+  (void)argv;
+  return require;
+}
+
+
+Determining if the gettimeofday exist passed with the following output:
+Change Dir: /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_41026/fast 
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_41026.dir/build.make CMakeFiles/cmTC_41026.dir/build
+Building C object CMakeFiles/cmTC_41026.dir/CheckSymbolExists.c.o
+/Library/Developer/CommandLineTools/usr/bin/clang   -std=gnu11 -o CMakeFiles/cmTC_41026.dir/CheckSymbolExists.c.o   -c /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_41026
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_41026.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/clang   -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_41026.dir/CheckSymbolExists.c.o  -o cmTC_41026 
+
+File /Users/jackson/ParF/parflow/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <sys/time.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef gettimeofday
+  return ((int*)(&gettimeofday))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+

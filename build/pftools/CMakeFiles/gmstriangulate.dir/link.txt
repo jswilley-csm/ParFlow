@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/clang  -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/gmstriangulate.dir/gmstriangulate.c.o CMakeFiles/gmstriangulate.dir/gmsreadTIN.c.o CMakeFiles/gmstriangulate.dir/gmswriteTIN.c.o CMakeFiles/gmstriangulate.dir/geom_sort_xy_vertices.c.o  -o gmstriangulate 

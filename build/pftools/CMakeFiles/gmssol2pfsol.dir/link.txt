@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/clang  -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/gmssol2pfsol.dir/gmsSOL2pfsol.c.o CMakeFiles/gmssol2pfsol.dir/gmsreadSOL.c.o CMakeFiles/gmssol2pfsol.dir/geom_sort_vertices.c.o  -o gmssol2pfsol 

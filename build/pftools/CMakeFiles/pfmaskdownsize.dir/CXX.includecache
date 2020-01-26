@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../pftools/third-party/simplify.h
+iostream
+-
+string.h
+-
+stdio.h
+-
+stdlib.h
+-
+vector
+-
+math.h
+-
+float.h
+-
+
+/Users/jackson/ParF/parflow/pftools/pfmaskdownsize.cpp
+simplify.h
+/Users/jackson/ParF/parflow/pftools/simplify.h
+vector
+-
+algorithm
+-
+iostream
+-
+fstream
+-
+cassert
+-
+
