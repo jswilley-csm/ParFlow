@@ -703,6 +703,12 @@ clm_last_rst,clm_daily_rst, pf_nlevsoi, pf_nlevlak)
      if (clm_write_logs==1) close(999)
      if (rank == 0) close (9919)
   end if
+  
+  
+  OPEN(1, FILE="slope_test_JS.dat", FORM="unformatted")
+     print *, slope_x_2d_pf
+  CONTINUE
+  WRITE(1) slope_x_2d_pf
 
 
 end subroutine clm_lsm
