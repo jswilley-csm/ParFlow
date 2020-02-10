@@ -44,8 +44,8 @@ clm_last_rst,clm_daily_rst, pf_nlevsoi, pf_nlevlak)
   ! integer, parameter :: nlevsoi     =  nz_rz     !number of soil levels
   ! integer, parameter :: nlevlak     =  10        !number of lake levels
   ! integer, parameter :: nlevsno     =  5    !number of maximum snow levels
-  ! integer, parameter :: SIZE(slope_x_2d_pf,1)ad      =   2   !number of solar radiation bands: vis, nir
-  ! integer, parameter :: SIZE(slope_x_2d_pf,2)ol      =   8   !number of soil color types
+  ! integer, parameter :: numrad      =   2   !number of solar radiation bands: vis, nir
+  ! integer, parameter :: numcol      =   8   !number of soil color types
 
   integer  :: pf_nlevsoi                         ! number of soil levels, passed from PF
   integer  :: pf_nlevlak                         ! number of lake levels, passed from PF
@@ -704,7 +704,11 @@ clm_last_rst,clm_daily_rst, pf_nlevsoi, pf_nlevlak)
      if (rank == 0) close (9919)
   end if
   
-  OPEN(UNIT=12, FILE="aoutput.txt", ACTION="write", STATUS="replace")
-  WRITE(12,*) slope_x_2d_pf
   
+  OPEN(1, FILE="slope_test_JS.dat", FORM="unformatted")
+     print *, slope_x_2d_pf
+  CONTINUE
+  WRITE(1) slope_x_2d_pf
+
+
 end subroutine clm_lsm
