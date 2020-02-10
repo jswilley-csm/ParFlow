@@ -4,7 +4,7 @@
 # start by building the basic container
 #-----------------------------------------------------------------------------
 FROM centos:latest
-MAINTAINER Steven Smith <smith84@llnl.gov>
+MAINTAINER Jackson Swilley <jswilley@mymail.mines.edu>
 
 #-----------------------------------------------------------------------------
 #  Package dependencies
@@ -77,7 +77,7 @@ ENV PARFLOW_MPIEXEC_EXTRA_FLAGS "--mca mpi_yield_when_idle 1 --oversubscribe --a
 
 WORKDIR /home/parflow
 
-RUN git clone -b master --single-branch https://github.com/parflow/parflow.git parflow && \
+RUN git clone -b master --single-branch https://github.com/jswilley-csm/ParFlow-test.git parflow && \
     mkdir -p build && \
     cd build && \
     cmake ../parflow \
