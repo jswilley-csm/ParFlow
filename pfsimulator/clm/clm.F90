@@ -704,7 +704,5 @@ clm_last_rst,clm_daily_rst, pf_nlevsoi, pf_nlevlak)
      if (rank == 0) close (9919)
   end if
   
-  OPEN(UNIT=12, FILE="aoutput.txt", ACTION="write", STATUS="replace")
-  WRITE(12,*) slope_x_2d_pf
-  
+
 end subroutine clm_lsm
