@@ -135,7 +135,7 @@ void SADVECT(double *s, double *sn,
   CLM_LSM(pressure_data, saturation_data, evap_trans_data, mask, porosity_data,                                                                                                \
           dz_mult_data, &istep, &dt, &t, &start_time, &dx, &dy, &dz, &ix, &iy, &nx, &ny, &nz, &nx_f, &ny_f, &nz_f, &nz_rz, &ip, &p, &q, &r, &gnx, &gny, &rank,                 \
           sw_data, lw_data, prcp_data, tas_data, u_data, v_data, patm_data, qatm_data,                                                                                         \
-          lai_data, &slope_x_2d_data, &slope_y_2d_data, sai_data, z0m_data, displa_data,                                                                                       \
+          lai_data, slope_x_2d_data, slope_y_2d_data, sai_data, z0m_data, displa_data,                                                                                       \
           eflx_lh_tot_data, eflx_lwrad_out_data, eflx_sh_tot_data, eflx_soil_grnd_data,                                                                                        \
           qflx_evap_tot_data, qflx_evap_grnd_data, qflx_evap_soi_data, qflx_evap_veg_data, qflx_tran_veg_data,                                                                 \
           qflx_infl_data, swe_out_data, t_grnd_data, t_soil_data,                                                                                                              \
