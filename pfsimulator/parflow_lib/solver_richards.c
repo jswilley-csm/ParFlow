@@ -2338,8 +2338,8 @@ AdvanceRichards(PFModule * this_module, double start_time,      /* Starting time
             x_sl_sub = VectorSubvector(x_sl, is);
             y_sl_sub = VectorSubvector(y_sl, is);
           
-            slope_x_2d_data = SubvectorData(x_sl_sub);
-            slope_y_2d_data = SubvectorData(y_sl_sub);
+            slope_x_2d_data = SubvectorElt(x_sl_sub, x, y, z);
+            slope_y_2d_data = SubvectorElt(y_sl_sub, x, y, z);
           
             /*BH: added vegetation forcings and associated option (clm_forc_veg) */
             clm_file_dir_length = strlen(public_xtra->clm_file_dir);
@@ -2348,7 +2348,7 @@ AdvanceRichards(PFModule * this_module, double start_time,      /* Starting time
                          nx_f, ny_f, nz_f, nz_rz, ip, p, q, r, gnx,
                          gny, rank, sw_data, lw_data, prcp_data,
                          tas_data, u_data, v_data, patm_data,
-                         qatm_data, lai_data,slope_x_2d_data,
+                         qatm_data, lai_data, slope_x_2d_data,
                          slope_y_2d_data, sai_data, z0m_data,
                          displa_data, eflx_lh, eflx_lwrad, eflx_sh,
                          eflx_grnd, qflx_tot, qflx_grnd, qflx_soi,
