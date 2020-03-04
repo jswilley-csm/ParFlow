@@ -233,6 +233,12 @@ typedef struct {
   Vector *old_pressure;
   Vector *mask;
 
+  /* Slope declarations courtesy of JSS */
+  Vector *slope_x = ProblemDataTSlopeX(problem_data);
+  Vector *slope_y = ProblemDataTSlopeY(problem_data);  
+  Subvector     *sx_sub, *sy_sub;
+  double        *slope_x_2d_data, *slope_y_2d_data;
+
   Vector *evap_trans_sum;       /* running sum of evaporation and transpiration */
   Vector *overland_sum;
   Vector *ovrl_bc_flx;          /* vector containing outflow at the boundary */
@@ -1522,7 +1528,7 @@ AdvanceRichards(PFModule * this_module, double start_time,      /* Starting time
 #ifdef HAVE_OAS3
   Grid *grid = (instance_xtra->grid);
   Subgrid *subgrid;
-  Subvector *p_sub, *s_sub, *et_sub, *m_sub;
+  Subvector *p_sub, *s_sub, *et_sub, *m_sub 
   double *pp, *sp, *et, *ms;
   double sw_lat = .0;
   double sw_lon = .0;
@@ -2170,6 +2176,11 @@ AdvanceRichards(PFModule * this_module, double start_time,      /* Starting time
         v_forc_sub = VectorSubvector(instance_xtra->v_forc, is);
         patm_forc_sub = VectorSubvector(instance_xtra->patm_forc, is);
         qatm_forc_sub = VectorSubvector(instance_xtra->qatm_forc, is);
+        
+        /* Slope subvectors */
+        sx_sub = VectorSubvector(slope_x, is);
+        sy_sub = VectorSubvector(slope_y, is);
+        
         /*BH: added LAI/SAI/Z0M/DISPLA/VEGMAP for vegetation forcing */
         lai_forc_sub = VectorSubvector(instance_xtra->lai_forc, is);
         sai_forc_sub = VectorSubvector(instance_xtra->sai_forc, is);
@@ -2235,6 +2246,10 @@ AdvanceRichards(PFModule * this_module, double start_time,      /* Starting time
           v_data = SubvectorData(v_forc_sub);
           patm_data = SubvectorData(patm_forc_sub);
           qatm_data = SubvectorData(qatm_forc_sub);
+          
+          /* Slope subvectors */
+          slope_x_2d_data = SubvectorData(sx_sub);
+          slope_y_2d_data = SubvectorData(sy_sub);
 
           /* BH: added LAI/SAI/Z0M/DISPLA/VEGMAP for vegetation forcing */
           lai_data = SubvectorData(lai_forc_sub);
@@ -2328,18 +2343,6 @@ AdvanceRichards(PFModule * this_module, double start_time,      /* Starting time
 
           case 1:
           {
-          
-            Subvector   *x_sl_sub, *y_sl_sub;
-            double      *slope_x_2d_data, *slope_y_2d_data;
-          
-            Vector      *x_sl = ProblemDataTSlopeX(problem_data);                //sk
-            Vector      *y_sl = ProblemDataTSlopeY(problem_data);                //sk
-          
-            x_sl_sub = VectorSubvector(x_sl, is);
-            y_sl_sub = VectorSubvector(y_sl, is);
-          
-            slope_x_2d_data = SubvectorElt(x_sl_sub, x, y, z);
-            slope_y_2d_data = SubvectorElt(y_sl_sub, x, y, z);
           
             /*BH: added vegetation forcings and associated option (clm_forc_veg) */
             clm_file_dir_length = strlen(public_xtra->clm_file_dir);
