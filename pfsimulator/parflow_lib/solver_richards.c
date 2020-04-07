@@ -2178,7 +2178,7 @@ AdvanceRichards(PFModule * this_module, double start_time,      /* Starting time
         qatm_forc_sub = VectorSubvector(instance_xtra->qatm_forc, is);
         
         /* Slope subvectors */
-        sx_sub = VectorSubvector(slope_x, is);
+        sx_sub = VectorSubvector(slope_x, ig);
         sy_sub = VectorSubvector(slope_y, is);
         
         /*BH: added LAI/SAI/Z0M/DISPLA/VEGMAP for vegetation forcing */
