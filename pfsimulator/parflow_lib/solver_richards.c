@@ -2179,7 +2179,7 @@ AdvanceRichards(PFModule * this_module, double start_time,      /* Starting time
         
         /* Slope subvectors */
         sx_sub = VectorSubvector(slope_x, ig);
-        sy_sub = VectorSubvector(slope_y, is);
+        sy_sub = VectorSubvector(slope_y, ig);
         
         /*BH: added LAI/SAI/Z0M/DISPLA/VEGMAP for vegetation forcing */
         lai_forc_sub = VectorSubvector(instance_xtra->lai_forc, is);
