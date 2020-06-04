@@ -234,10 +234,9 @@ typedef struct {
   Vector *mask;
 
   /* Slope declarations courtesy of JSS */
-  Vector *slope_x = ProblemDataTSlopeX(problem_data);
-  Vector *slope_y = ProblemDataTSlopeY(problem_data);  
-  Subvector     *sx_sub, *sy_sub;
-  double        *slope_x_2d_data, *slope_y_2d_data;
+  // @IJB Should slope_x and slope_y (and their code) be moved under a HAVE_CLM guard?
+  //      Would make sense given they are only used in CLM.
+  Vector *slope_x, *slope_y;
 
   Vector *evap_trans_sum;       /* running sum of evaporation and transpiration */
   Vector *overland_sum;
@@ -813,6 +812,18 @@ SetupRichards(PFModule * this_module)
 
     instance_xtra->mask = NewVectorType(grid, 1, 1, vector_cell_centered);
     InitVectorAll(instance_xtra->mask, 0.0);
+
+    // Copying how problem_data->slope_x is constructed
+    instance_xtra->slope_x =
+      NewVectorType(VectorGrid(ProblemDataTSlopeX(problem_data)), 1, 1, vector_cell_centered_2D);
+    // Copying problem_data->slope_x into instance_xtra->slope_x
+    Copy(ProblemDataTSlopeX(problem_data), instance_xtra->slope_x);
+
+    // Copying how problem_data->slope_y is constructed
+    instance_xtra->slope_y =
+      NewVectorType(VectorGrid(ProblemDataTSlopeY(problem_data)), 1, 1, vector_cell_centered_2D);
+    // Copying problem_data->slope_y into instance_xtra->slope_y
+    Copy(ProblemDataTSlopeY(problem_data), instance_xtra->slope_y);
 
     instance_xtra->evap_trans_sum =
       NewVectorType(grid, 1, 0, vector_cell_centered);
@@ -1528,7 +1539,7 @@ AdvanceRichards(PFModule * this_module, double start_time,      /* Starting time
 #ifdef HAVE_OAS3
   Grid *grid = (instance_xtra->grid);
   Subgrid *subgrid;
-  Subvector *p_sub, *s_sub, *et_sub, *m_sub 
+  Subvector *p_sub, *s_sub, *et_sub, *m_sub;
   double *pp, *sp, *et, *ms;
   double sw_lat = .0;
   double sw_lon = .0;
@@ -1565,6 +1576,8 @@ AdvanceRichards(PFModule * this_module, double start_time,      /* Starting time
   double *patm_data = NULL;
   double *qatm_data = NULL;
   double *lai_data = NULL;
+  double *slope_x_2d_data =  NULL;
+  double *slope_y_2d_data =  NULL;
   /*BH*/ double *sai_data = NULL;
   /*BH*/ double *z0m_data = NULL;
   /*BH*/ double *displa_data = NULL;
@@ -1578,7 +1591,8 @@ AdvanceRichards(PFModule * this_module, double start_time,      /* Starting time
     *eflx_soil_grnd_sub, *qflx_evap_tot_sub, *qflx_evap_grnd_sub,
     *qflx_evap_soi_sub, *qflx_evap_veg_sub, *qflx_tran_veg_sub,
     *qflx_infl_sub, *swe_out_sub, *t_grnd_sub, *tsoil_sub, *irr_flag_sub,
-    *qflx_qirr_sub, *qflx_qirr_inst_sub;
+    *qflx_qirr_sub, *qflx_qirr_inst_sub,
+    *sx_sub, *sy_sub;
   double *eflx_lh, *eflx_lwrad, *eflx_sh, *eflx_grnd, *qflx_tot, *qflx_grnd,
     *qflx_soi, *qflx_eveg, *qflx_tveg, *qflx_in, *swe, *t_g, *t_soi, *iflag,
     *qirr, *qirr_inst;
@@ -2176,11 +2190,11 @@ AdvanceRichards(PFModule * this_module, double start_time,      /* Starting time
         v_forc_sub = VectorSubvector(instance_xtra->v_forc, is);
         patm_forc_sub = VectorSubvector(instance_xtra->patm_forc, is);
         qatm_forc_sub = VectorSubvector(instance_xtra->qatm_forc, is);
-        
+
         /* Slope subvectors */
-        sx_sub = VectorSubvector(slope_x, ig);
-        sy_sub = VectorSubvector(slope_y, ig);
-        
+        sx_sub = VectorSubvector(instance_xtra->slope_x, is);
+        sy_sub = VectorSubvector(instance_xtra->slope_y, is);
+
         /*BH: added LAI/SAI/Z0M/DISPLA/VEGMAP for vegetation forcing */
         lai_forc_sub = VectorSubvector(instance_xtra->lai_forc, is);
         sai_forc_sub = VectorSubvector(instance_xtra->sai_forc, is);
@@ -2246,7 +2260,7 @@ AdvanceRichards(PFModule * this_module, double start_time,      /* Starting time
           v_data = SubvectorData(v_forc_sub);
           patm_data = SubvectorData(patm_forc_sub);
           qatm_data = SubvectorData(qatm_forc_sub);
-          
+
           /* Slope subvectors */
           slope_x_2d_data = SubvectorData(sx_sub);
           slope_y_2d_data = SubvectorData(sy_sub);
@@ -2343,7 +2357,7 @@ AdvanceRichards(PFModule * this_module, double start_time,      /* Starting time
 
           case 1:
           {
-          
+
             /*BH: added vegetation forcings and associated option (clm_forc_veg) */
             clm_file_dir_length = strlen(public_xtra->clm_file_dir);
             CALL_CLM_LSM(pp, sp, et, ms, po_dat, dz_dat, istep, cdt, t,
