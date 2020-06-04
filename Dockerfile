@@ -43,7 +43,7 @@ ENV LD_LIBRARY_PATH $LD_LIBRARY_PATH:/usr/lib64/openmpi/lib
 # HDF5
 #
 WORKDIR /home/parflow
-run wget -q https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8/hdf5-1.8.21/src/hdf5-1.8.21.tar.gz && \ 
+run wget -q https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8/hdf5-1.8.21/src/hdf5-1.8.21.tar.gz && \
     tar -xf hdf5-1.8.21.tar.gz && \
     source /etc/profile.d/modules.sh && \
     module load mpi/openmpi-x86_64 && \
@@ -59,7 +59,7 @@ run wget -q https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8/hdf5-1.8.21/
 # NetCDF
 #
 WORKDIR /home/parflow
-run wget -q https://github.com/Unidata/netcdf-c/archive/v4.5.0.tar.gz && \ 
+run wget -q https://github.com/Unidata/netcdf-c/archive/v4.5.0.tar.gz && \
     tar -xf v4.5.0.tar.gz && \
     source /etc/profile.d/modules.sh && \
     module load mpi/openmpi-x86_64 && \
@@ -107,7 +107,7 @@ ENV PARFLOW_MPIEXEC_EXTRA_FLAGS "--mca mpi_yield_when_idle 1 --oversubscribe --a
 
 WORKDIR /home/parflow
 
-RUN git clone https://github.com/jswilley-csm/ParFlow-test.git
+RUN git clone https://github.com/ian-bertolacci/ParFlow-test.git
 
 RUN mkdir -p build && \
     cd build && \
@@ -128,5 +128,3 @@ RUN mkdir -p build && \
 WORKDIR /data
 
 ENTRYPOINT ["tclsh"]
-
-
