@@ -1576,8 +1576,6 @@ AdvanceRichards(PFModule * this_module, double start_time,      /* Starting time
   double *patm_data = NULL;
   double *qatm_data = NULL;
   double *lai_data = NULL;
-  double *slope_x_2d_data =  NULL;
-  double *slope_y_2d_data =  NULL;
   /*BH*/ double *sai_data = NULL;
   /*BH*/ double *z0m_data = NULL;
   /*BH*/ double *displa_data = NULL;
@@ -1595,7 +1593,8 @@ AdvanceRichards(PFModule * this_module, double start_time,      /* Starting time
     *sx_sub, *sy_sub;
   double *eflx_lh, *eflx_lwrad, *eflx_sh, *eflx_grnd, *qflx_tot, *qflx_grnd,
     *qflx_soi, *qflx_eveg, *qflx_tveg, *qflx_in, *swe, *t_g, *t_soi, *iflag,
-    *qirr, *qirr_inst;
+    *qirr, *qirr_inst,
+    *slope_x_2d_data, *slope_y_2d_data;
   int clm_file_dir_length;
 #endif
 
