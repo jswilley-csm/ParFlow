@@ -1,22 +1,22 @@
 !#include <misc.h>
 
-subroutine clm_coszen (clm, slope_x_2d_pf, slope_y_2d_pf, day, coszen)
+subroutine clm_coszen (clm, day, coszen)
 
 !=========================================================================
 !
-!  CLMCLMCLMCLMCLMCLMCLMCLMCL  A community developed and sponsored, freely   
-!  L                        M  available land surface process model.  
-!  M --COMMON LAND MODEL--  C  
+!  CLMCLMCLMCLMCLMCLMCLMCLMCL  A community developed and sponsored, freely
+!  L                        M  available land surface process model.
+!  M --COMMON LAND MODEL--  C
 !  C                        L  CLM WEB INFO: http://clm.gsfc.nasa.gov
-!  LMCLMCLMCLMCLMCLMCLMCLMCLM  CLM ListServ/Mailing List: 
+!  LMCLMCLMCLMCLMCLMCLMCLMCLM  CLM ListServ/Mailing List:
 !
 !=========================================================================
-! clm_coszen.F90: 
+! clm_coszen.F90:
 !
 ! DESCRIPTION:
 !  Cosine solar zenith angle from:
 !    o day (1.x to 365.x), where x=0 (e.g. 213.0) denotes 00:00 at greenwich
-!    o latitude,  where SH = - and NH = + 
+!    o latitude,  where SH = - and NH = +
 !    o longitude, where WH = - and EH = +
 !
 !  The solar declination must match that used in the atmospheric model.
@@ -25,25 +25,25 @@ subroutine clm_coszen (clm, slope_x_2d_pf, slope_y_2d_pf, day, coszen)
 !  This discrepancy between clm cosz and atm cosz causes a problem.
 !  clm cosz may be <= zero (sun below horizon), in which case albedos
 !  equal zero, but atm cosz may be > zero (sun above horizon), in which
-!  case atm model needs albedos. There is no problem if the atm model has sun   
-!  below horizon, but the CLM has sun above horizon if the atm solar fluxes 
-!  are equal zero.  A possible solution then is to reset points with sun 
-!  slightly below horizon to slightly above horizon. 
+!  case atm model needs albedos. There is no problem if the atm model has sun
+!  below horizon, but the CLM has sun above horizon if the atm solar fluxes
+!  are equal zero.  A possible solution then is to reset points with sun
+!  slightly below horizon to slightly above horizon.
 !
-!  In practice this error is not very large. e.g., if albedo error is 
-!  0.0001 (atm cosz = 0.0001, clm cosz = 0) absorbed solar radiation 
-!  error is incident flux * 0.0001.  Since incident flux is itself 
+!  In practice this error is not very large. e.g., if albedo error is
+!  0.0001 (atm cosz = 0.0001, clm cosz = 0) absorbed solar radiation
+!  error is incident flux * 0.0001.  Since incident flux is itself
 !  multiplied by atm cosz, incident flux is small.  Hence, error is small.
-!  In fact the error is smaller than the difference between atm net solar 
+!  In fact the error is smaller than the difference between atm net solar
 !  radiation at the surface and CLM net solar radiation at the surface, which
 !  arises due to the different surface radiation parameterizations.
 !
-!  The reset points are discussed above just in case the atm model 
+!  The reset points are discussed above just in case the atm model
 !  blows up when the albedos are equal zero if atm cosz > 0.
 !
 ! REVISION HISTORY:
 !  15 September 1999: Yongjiu Dai; Initial code
-!  15 December 1999:  Paul Houser and Jon Radakovich; F90 Revision 
+!  15 December 1999:  Paul Houser and Jon Radakovich; F90 Revision
 !   3 March 2000:     Jon Radakovich; Revision for diagnostic output
 !=========================================================================
 ! $Id: clm_coszen.F90,v 1.1.1.1 2006/02/14 23:05:52 kollet Exp $
@@ -56,8 +56,6 @@ subroutine clm_coszen (clm, slope_x_2d_pf, slope_y_2d_pf, day, coszen)
 !=== Arguments ===========================================================
 
   type (clm1d), intent(inout)  :: clm    !CLM 1-D Module
-  real(r8), intent(in)         :: slope_x_2d_pf
-  real(r8), intent(in)         :: slope_y_2d_pf
   real(r8), intent(in)         :: day
   real(r8), intent(out)        :: coszen
 
@@ -81,21 +79,21 @@ subroutine clm_coszen (clm, slope_x_2d_pf, slope_y_2d_pf, day, coszen)
 
 ! Slope aspect from ParFlow terrain
 
-  slope = atan( sqrt( slope_x_2d_pf**2 + slope_y_2d_pf**2 ) )
-  Sy = abs(slope_y_2d_pf)
-  Sx = abs(slope_x_2d_pf)
+  slope = atan( sqrt( clm%slope_x**2 + clm%slope_y**2 ) )
+  Sy = abs(clm%slope_y)
+  Sx = abs(clm%slope_x)
   pi = 4.*atan(1.)
-  
-  if (slope_y_2d_pf>=0 .and. slope_x_2d_pf>=0) then                                    
+
+  if (clm%slope_y>=0 .and. clm%slope_x>=0) then
   	aspect = atan(Sx/Sy)
-  
-  else if(slope_y_2d_pf>=0 .and. slope_x_2d_pf<0) then                          
+
+  else if(clm%slope_y>=0 .and. clm%slope_x<0) then
   	aspect = -atan(Sx/Sy)
-  
-  else if(slope_y_2d_pf<0 .and. slope_x_2d_pf>=0) then                          
+
+  else if(clm%slope_y<0 .and. clm%slope_x>=0) then
   	aspect = pi - atan(Sx/Sy)
-  
-  else if(slope_y_2d_pf<0 .and. slope_x_2d_pf<0) then                              
+
+  else if(clm%slope_y<0 .and. clm%slope_x<0) then
   	aspect = -pi + atan(Sx/Sy)
 
   end if
@@ -121,7 +119,7 @@ subroutine clm_coszen (clm, slope_x_2d_pf, slope_y_2d_pf, day, coszen)
 
   hrang = 15. * (loctim-12.) * pi/180.     ! 360/24 = 15
 
-! Cosine solar zenith angle.  Reset points with sun slightly below horizon 
+! Cosine solar zenith angle.  Reset points with sun slightly below horizon
 ! to slightly above horizon, as discussed in description.
 
 coszen = sin(phi) * sin(delta) * cos(slope) &

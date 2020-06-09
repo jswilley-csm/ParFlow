@@ -1,15 +1,15 @@
 !#include <misc.h>
 
 subroutine drv_getforce (drv,tile,clm,nx,ny,sw_pf,lw_pf,prcp_pf,tas_pf,u_pf,v_pf,	&
-			patm_pf,qatm_pf,lai_pf,sai_pf,z0m_pf,displa_pf,istep_pf,clm_forc_veg)
+			patm_pf,qatm_pf,lai_pf,sai_pf,z0m_pf,displa_pf,istep_pf,clm_forc_veg,slope_x,slope_y)
 
 !=========================================================================
 !
-!  CLMCLMCLMCLMCLMCLMCLMCLMCL  A community developed and sponsored, freely   
-!  L                        M  available land surface process model.  
-!  M --COMMON LAND MODEL--  C  
+!  CLMCLMCLMCLMCLMCLMCLMCLMCL  A community developed and sponsored, freely
+!  L                        M  available land surface process model.
+!  M --COMMON LAND MODEL--  C
 !  C                        L  CLM WEB INFO: http://clm.gsfc.nasa.gov
-!  LMCLMCLMCLMCLMCLMCLMCLMCLM  CLM ListServ/Mailing List: 
+!  LMCLMCLMCLMCLMCLMCLMCLMCLM  CLM ListServ/Mailing List:
 !
 !=========================================================================
 ! DESCRIPTION:
@@ -24,7 +24,8 @@ subroutine drv_getforce (drv,tile,clm,nx,ny,sw_pf,lw_pf,prcp_pf,tas_pf,u_pf,v_pf
 !
 ! REVISION HISTORY:
 !  15 September 1999: Yongjiu Dai; Initial code
-!  15 December 1999:  Paul Houser and Jon Radakovich; F90 Revision 
+!  15 December 1999:  Paul Houser and Jon Radakovich; F90 Revision
+!  8 June 2020: Ian Bertolacci; Addition of slope
 !=========================================================================
 ! $Id: drv_getforce.F90,v 1.1.1.1 2006/02/14 23:05:52 kollet Exp $
 !=========================================================================
@@ -38,7 +39,7 @@ subroutine drv_getforce (drv,tile,clm,nx,ny,sw_pf,lw_pf,prcp_pf,tas_pf,u_pf,v_pf
 
 !=== Arguments ===========================================================
 
-  type (drvdec) ,intent(inout) :: drv              
+  type (drvdec) ,intent(inout) :: drv
   type (tiledec),intent(inout) :: tile(drv%nch)
   type (clm1d)  ,intent(inout) :: clm (drv%nch)
   integer,intent(in)  :: istep_pf,nx,ny
@@ -55,6 +56,8 @@ subroutine drv_getforce (drv,tile,clm,nx,ny,sw_pf,lw_pf,prcp_pf,tas_pf,u_pf,v_pf
   real(r8),intent(in) :: sai_pf((nx+2)*(ny+2)*3)            ! sai, passed from PF !BH
   real(r8),intent(in) :: z0m_pf((nx+2)*(ny+2)*3)            ! z0m, passed from PF !BH
   real(r8),intent(in) :: displa_pf((nx+2)*(ny+2)*3)         ! displacement height, passed from PF !BH
+	real(r8),intent(in) :: slope_x((nx+2)*(ny+2)*3)           ! slope in x direction, passed from PF !IJB
+	real(r8),intent(in) :: slope_y((nx+2)*(ny+2)*3)           ! slope in y direction, passed from PF !IJB
 
 
 !=== Local Variables =====================================================
@@ -63,11 +66,11 @@ subroutine drv_getforce (drv,tile,clm,nx,ny,sw_pf,lw_pf,prcp_pf,tas_pf,u_pf,v_pf
   real(r8) prcp      ! precipitation [mm/s]
   integer t,i,j,k,l  ! Looping indices
 ! integer nx,ny      ! Array sizes
-  
+
 !=== End Variable List ===================================================
 
 !=== Increment Time Step Counter
-! clm%istep=clm%istep+1 
+! clm%istep=clm%istep+1
   clm%istep=istep_pf
 
 ! Valdai - 1D Met data
@@ -87,14 +90,16 @@ subroutine drv_getforce (drv,tile,clm,nx,ny,sw_pf,lw_pf,prcp_pf,tas_pf,u_pf,v_pf
      clm(t)%forc_v          = v_pf(l)
      clm(t)%forc_pbot       = patm_pf(l)
      clm(t)%forc_q          = qatm_pf(l)
+		 clm(t)%slope_x         = slope_x(l)
+		 clm(t)%slope_y         = slope_y(l)
 	 ! BH: added the option for forcing or not the vegetation
-	if  (clm_forc_veg== 1) then 
+	if  (clm_forc_veg== 1) then
 		clm(t)%elai	        = lai_pf(l)
-		clm(t)%esai	        = sai_pf(l)	
-		clm(t)%z0m	        = z0m_pf(l) 
-		clm(t)%displa	    = displa_pf(l)     
+		clm(t)%esai	        = sai_pf(l)
+		clm(t)%z0m	        = z0m_pf(l)
+		clm(t)%displa	    = displa_pf(l)
 	endif
-	 
+
      !Treat air density
      clm(t)%forc_rho        = clm(t)%forc_pbot/(clm(t)%forc_t*2.8704e2)
 
@@ -103,7 +108,7 @@ subroutine drv_getforce (drv,tile,clm,nx,ny,sw_pf,lw_pf,prcp_pf,tas_pf,u_pf,v_pf
      clm(t)%forc_solad(2)   = solar*35./100.   !forc_soll
      clm(t)%forc_solai(1)   = solar*15./100.   !forc_solsd
      clm(t)%forc_solai(2)   = solar*15./100.   !forc_solad
-     
+
      !Treat precip
      !(Set upper limit of air temperature for snowfall at 275.65K.
      ! This cut-off was selected based on Fig. 1, Plate 3-1, of Snow

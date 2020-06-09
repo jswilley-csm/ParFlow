@@ -233,11 +233,6 @@ typedef struct {
   Vector *old_pressure;
   Vector *mask;
 
-  /* Slope declarations courtesy of JSS */
-  // @IJB Should slope_x and slope_y (and their code) be moved under a HAVE_CLM guard?
-  //      Would make sense given they are only used in CLM.
-  Vector *slope_x, *slope_y;
-
   Vector *evap_trans_sum;       /* running sum of evaporation and transpiration */
   Vector *overland_sum;
   Vector *ovrl_bc_flx;          /* vector containing outflow at the boundary */
@@ -812,18 +807,6 @@ SetupRichards(PFModule * this_module)
 
     instance_xtra->mask = NewVectorType(grid, 1, 1, vector_cell_centered);
     InitVectorAll(instance_xtra->mask, 0.0);
-
-    // Copying how problem_data->slope_x is constructed
-    instance_xtra->slope_x =
-      NewVectorType(VectorGrid(ProblemDataTSlopeX(problem_data)), 1, 1, vector_cell_centered_2D);
-    // Copying problem_data->slope_x into instance_xtra->slope_x
-    Copy(ProblemDataTSlopeX(problem_data), instance_xtra->slope_x);
-
-    // Copying how problem_data->slope_y is constructed
-    instance_xtra->slope_y =
-      NewVectorType(VectorGrid(ProblemDataTSlopeY(problem_data)), 1, 1, vector_cell_centered_2D);
-    // Copying problem_data->slope_y into instance_xtra->slope_y
-    Copy(ProblemDataTSlopeY(problem_data), instance_xtra->slope_y);
 
     instance_xtra->evap_trans_sum =
       NewVectorType(grid, 1, 0, vector_cell_centered);
@@ -2191,8 +2174,8 @@ AdvanceRichards(PFModule * this_module, double start_time,      /* Starting time
         qatm_forc_sub = VectorSubvector(instance_xtra->qatm_forc, is);
 
         /* Slope subvectors */
-        sx_sub = VectorSubvector(instance_xtra->slope_x, is);
-        sy_sub = VectorSubvector(instance_xtra->slope_y, is);
+        sx_sub = VectorSubvector(ProblemDataTSlopeX(problem_data), is);
+        sy_sub = VectorSubvector(ProblemDataTSlopeX(problem_data), is);
 
         /*BH: added LAI/SAI/Z0M/DISPLA/VEGMAP for vegetation forcing */
         lai_forc_sub = VectorSubvector(instance_xtra->lai_forc, is);

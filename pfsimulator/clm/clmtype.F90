@@ -5,11 +5,11 @@ module clmtype
 
 !=========================================================================
 !
-!  CLMCLMCLMCLMCLMCLMCLMCLMCL  A community developed and sponsored, freely   
-!  L                        M  available land surface process model.  
-!  M --COMMON LAND MODEL--  C  
+!  CLMCLMCLMCLMCLMCLMCLMCLMCL  A community developed and sponsored, freely
+!  L                        M  available land surface process model.
+!  M --COMMON LAND MODEL--  C
 !  C                        L  CLM WEB INFO: http://clm.gsfc.nasa.gov
-!  LMCLMCLMCLMCLMCLMCLMCLMCLM  CLM ListServ/Mailing List: 
+!  LMCLMCLMCLMCLMCLMCLMCLMCLM  CLM ListServ/Mailing List:
 !
 !=========================================================================
 ! DESCRIPTION:
@@ -35,7 +35,7 @@ module clmtype
      integer :: kpatch     ! patch index
      integer :: itypwat    ! water type
      logical :: lakpoi     ! true => lake point
-     logical :: baresoil   ! true => bare soil  
+     logical :: baresoil   ! true => bare soil
      ! logical :: irrig      ! true => for irrigated soil
      integer :: irrig      ! 0 = no irrigation (false); 1 = irrigation (true)
      integer :: itypprc    ! precipitation type (from met data) 1= rain 2 =snow
@@ -44,7 +44,7 @@ module clmtype
      real(r8):: londeg     ! longitude (degrees)
      real(r8):: lat        ! latitude  (radians)
      real(r8):: lon        ! longitude (radians)
-                           
+
      real(r8) dtime        ! model time step [second]
      real(r8) dtime_old
      integer  istep        ! number of time step
@@ -93,9 +93,9 @@ module clmtype
       real(r8) :: watdry(max_nlevsoi) ! water content when evapotranspiration stops (new)
       real(r8) :: watopt(max_nlevsoi) ! optimal water content for evapotranspiration (new)
       real(r8) :: csol  (max_nlevsoi) ! heat capacity, soil solids (J/m**3/Kelvin)
-      real(r8) :: tkmg  (max_nlevsoi) ! thermal conductivity, soil minerals  [W/m-K]  
+      real(r8) :: tkmg  (max_nlevsoi) ! thermal conductivity, soil minerals  [W/m-K]
       real(r8) :: tkdry (max_nlevsoi) ! thermal conductivity, dry soil       (W/m/Kelvin)
-      real(r8) :: tksatu(max_nlevsoi) ! thermal conductivity, saturated soil [W/m-K]  
+      real(r8) :: tksatu(max_nlevsoi) ! thermal conductivity, saturated soil [W/m-K]
       real(r8) :: rootfr(max_nlevsoi) ! fraction of roots in each soil layer
 
 ! Forcing
@@ -147,7 +147,7 @@ module clmtype
      real(r8) :: qflx_evap_veg        ! evaporation+transpiration from leaves [mm/s]
      real(r8) :: qflx_evap_soi        ! evaporation heat flux from ground [mm/s]
      real(r8) :: qflx_tran_veg        ! transpiration rate [mm/s]
-     real(r8) :: qflx_tran_veg_old  
+     real(r8) :: qflx_tran_veg_old
      real(r8) :: eflx_lwrad_out       ! outgoing long-wave radiation from ground+canopy
      real(r8) :: eflx_soil_grnd       ! ground heat flux [W/m2]
      real(r8) :: qflx_surf            ! surface runoff (mm h2o/s)
@@ -164,10 +164,10 @@ module clmtype
      integer :: soilind   !Number of soil layer diagnostic variables
      integer :: snowind   !Number of snow layer diagnostic variables
 
-! hydrology 
+! hydrology
 
-     integer  :: imelt      (-nlevsno+1:max_nlevsoi) ! Flag for melting (=1), freezing (=2), Not=0 
-     real(r8) :: frac_iceold(-nlevsno+1:max_nlevsoi) ! fraction of ice relative to the total water 
+     integer  :: imelt      (-nlevsno+1:max_nlevsoi) ! Flag for melting (=1), freezing (=2), Not=0
+     real(r8) :: frac_iceold(-nlevsno+1:max_nlevsoi) ! fraction of ice relative to the total water
 
      real(r8) :: sfact            ! term for implicit correction to evaporation
      real(r8) :: sfactmax         ! maximim of "sfact"
@@ -179,11 +179,11 @@ module clmtype
      real(r8) :: qflx_dew_snow    ! surface dew added to snow pack (mm h2o /s) [+]
      real(r8) :: qflx_snomelt     ! rate of snowmelt [kg/(m2 s)]
 
-! Surface solar radiation 
+! Surface solar radiation
 
      real(r8) :: rssun          ! sunlit stomatal resistance (s/m)
      real(r8) :: rssha          ! shaded stomatal resistance (s/m)
-     real(r8) :: psnsun         ! sunlit leaf photosynthesis (umol CO2 /m**2/ s) 
+     real(r8) :: psnsun         ! sunlit leaf photosynthesis (umol CO2 /m**2/ s)
      real(r8) :: psnsha         ! shaded leaf photosynthesis (umol CO2 /m**2/ s)
      real(r8) :: laisun         ! sunlit leaf area
      real(r8) :: laisha         ! shaded leaf area
@@ -193,20 +193,23 @@ module clmtype
      real(r8) :: fsr            ! solar radiation reflected (W/m**2)
      real(r8) :: ndvi           ! Normalized Difference Vegetation Index (diagnostic)
 
-! surfacealbedo 
+     real(r8) :: slope_x  ! Slope in x-direction from PF
+     real(r8) :: slope_y  ! Slope in y-direction from PF
+
+! surfacealbedo
 
      real(r8) :: parsun         ! average absorbed PAR for sunlit leaves (W/m**2)
      real(r8) :: parsha         ! average absorbed PAR for shaded leaves (W/m**2)
-     real(r8) :: albd(numrad)   ! surface albedo (direct)                     
-     real(r8) :: albi(numrad)   ! surface albedo (diffuse)                    
-     real(r8) :: albgrd(numrad) ! ground albedo (direct)                      
-     real(r8) :: albgri(numrad) ! ground albedo (diffuse)                     
-     real(r8) :: fabd(numrad)   ! flux absorbed by veg per unit direct flux   
-     real(r8) :: fabi(numrad)   ! flux absorbed by veg per unit diffuse flux  
-     real(r8) :: ftdd(numrad)   ! down direct flux below veg per unit dir flx 
+     real(r8) :: albd(numrad)   ! surface albedo (direct)
+     real(r8) :: albi(numrad)   ! surface albedo (diffuse)
+     real(r8) :: albgrd(numrad) ! ground albedo (direct)
+     real(r8) :: albgri(numrad) ! ground albedo (diffuse)
+     real(r8) :: fabd(numrad)   ! flux absorbed by veg per unit direct flux
+     real(r8) :: fabi(numrad)   ! flux absorbed by veg per unit diffuse flux
+     real(r8) :: ftdd(numrad)   ! down direct flux below veg per unit dir flx
      real(r8) :: ftid(numrad)   ! down diffuse flux below veg per unit dir flx
      real(r8) :: ftii(numrad)   ! down diffuse flux below veg per unit dif flx
-     real(r8) :: fsun           ! sunlit fraction of canopy                   
+     real(r8) :: fsun           ! sunlit fraction of canopy
      real(r8) :: surfalb        ! instantaneous all-wave surface albedo
      real(r8) :: snoalb         ! instantaneous all_wave snow albedo
 
@@ -216,18 +219,18 @@ module clmtype
      real(r8) :: eff_porosity(max_nlevsoi)   ! effective porosity = porosity - vol_ice   --- P
      real(r8) :: pf_flux(max_nlevsoi)        !@ sink/source flux for Parlfow couple for each CLM soil layer
      real(r8) :: pf_vol_liq(max_nlevsoi)    !@ partial volume of liquid water in layer from Parflow over entire domain (Parflow and CLM)	 real(r8) :: pf_press(parfl_nlevsoi)  !@ pressure values from parflow
-     real(r8) :: pf_press(max_nlevsoi) !@ old pressure values from parflow    
+     real(r8) :: pf_press(max_nlevsoi) !@ old pressure values from parflow
 
-     real(r8) :: qflx_infl      ! infiltration (mm H2O /s) 
+     real(r8) :: qflx_infl      ! infiltration (mm H2O /s)
      real(r8) :: qflx_infl_old
-     real(r8) :: qflx_drain     ! sub-surface runoff (mm H2O /s) 
+     real(r8) :: qflx_drain     ! sub-surface runoff (mm H2O /s)
      real(r8) :: qflx_top_soil  ! net water input into soil from top (mm/s)
      real(r8) :: qflx_prec_intr ! interception of precipitation [mm/s]
      real(r8) :: qflx_prec_grnd ! water onto ground including canopy runoff [kg/(m2 s)]
      real(r8) :: qflx_qirr      ! qflx_surf directed to irrig (mm H2O/s)    **IMF irrigation applied at surface [mm/s] (added to rain or throughfall, depending)
      real(r8) :: qflx_qirr_inst(max_nlevsoi)   ! new                            **IMF irrigation applied by 'instant' method [mm/s] (added to pf_flux)
      real(r8) :: qflx_qrgwl     ! qflx_surf at glaciers, wetlands, lakes
-     real(r8) :: btran          ! transpiration wetness factor (0 to 1) 
+     real(r8) :: btran          ! transpiration wetness factor (0 to 1)
      real(r8) :: smpmax         ! !@RMM not used, replaced below: wilting point potential in mm (new)
 
      real(r8) :: wilting_point  ! wilting point from PF in m or [-] depending @RMM
@@ -244,12 +247,12 @@ module clmtype
      real(r8) :: irr_threshold  ! irrigation soil moisture threshold for deficit cycle @IMF
      integer  :: threshold_type ! irrigation threshold type -- top layer, bottom layer, column avg.
      real(r8) :: irr_flag       ! flag for irrigation or non-irrigation for a given day (based on threshold)
-     
+
      real(r8) :: eflx_snomelt   ! added to be consistent with lsm hybrid code
      real(r8) :: eflx_impsoil   ! implicit evaporation for soil temperature equation (W/m**2)
      real(r8) :: eflx_lh_vege   ! veg evaporation heat flux (W/m**2) [+ to atm]
      real(r8) :: eflx_lh_vegt   ! veg transpiration heat flux (W/m**2) [+ to atm]
-     real(r8) :: eflx_lh_grnd   ! ground evaporation heat flux (W/m**2) [+ to atm]   
+     real(r8) :: eflx_lh_grnd   ! ground evaporation heat flux (W/m**2) [+ to atm]
      real(r8) :: eflx_lwrad_net ! net infrared (longwave) rad (W/m**2) [+ = to atm]
 
 ! water and energy balance check
@@ -281,10 +284,10 @@ module clmtype
      real(r8) :: dleaf          ! leaf dimension [m]
      real(r8) :: xl             ! pft_varcon leaf/stem orientation index
      real(r8) :: vw             ! pft_varcon btran exponent:[(h2osoi_vol-watdry)/(watopt-watdry)]**vw
-     real(r8) :: rhol(numrad)   ! pft_varcon leaf reflectance  : 1=vis, 2=nir 
-     real(r8) :: rhos(numrad)   ! pft_varcon stem reflectance  : 1=vis, 2=nir 
-     real(r8) :: taul(numrad)   ! pft_varcon leaf transmittance: 1=vis, 2=nir 
-     real(r8) :: taus(numrad)   ! pft_varcon stem transmittance: 1=vis, 2=nir 
+     real(r8) :: rhol(numrad)   ! pft_varcon leaf reflectance  : 1=vis, 2=nir
+     real(r8) :: rhos(numrad)   ! pft_varcon stem reflectance  : 1=vis, 2=nir
+     real(r8) :: taul(numrad)   ! pft_varcon leaf transmittance: 1=vis, 2=nir
+     real(r8) :: taus(numrad)   ! pft_varcon stem transmittance: 1=vis, 2=nir
      real(r8) :: qe25           ! quantum efficiency at 25c (umol co2 / umol photon)
      real(r8) :: ko25           ! o2 michaelis-menten constant at 25c (pa)
      real(r8) :: kc25           ! co2 michaelis-menten constant at 25c (pa)
@@ -300,7 +303,7 @@ module clmtype
 
 ! Variables needed for ALMA output
 
-     real(r8) :: diffusion                 !heat diffusion through layer zero interface 
+     real(r8) :: diffusion                 !heat diffusion through layer zero interface
      real(r8) :: h2osoi_liq_old(1:max_nlevsoi) !liquid water from previous timestep
      real(r8) :: h2ocan_old                !depth of water on foliage from previous timestep
      real(r8) :: acond                     !aerodynamic conductance (m/s)
@@ -309,7 +312,7 @@ module clmtype
      real(r8) :: frac                      !fraction of water becoming surface runoff after some TOPMODEL approach
      real(r8) :: tot_surf                  !total water velocity applied at the ground surface
      integer  :: pond_flag
-     
+
 !@ Variables needed for use of topographic information and the parflow-clm couple
      integer  :: topo_mask(3) !info of which cells are "inactive" (topo_mask = 0) due to topography, (1) is top of active zone, (2) is bottom of clm grid (1)-10, (3) is bottom of pf domain
      integer  :: planar_mask   !planar info of which cells are "inactive" (0) due to topography
@@ -330,21 +333,3 @@ module clmtype
   end type clm1d
 
 end module clmtype
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

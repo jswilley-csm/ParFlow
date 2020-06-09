@@ -13,11 +13,11 @@ clm_last_rst,clm_daily_rst, pf_nlevsoi, pf_nlevlak)
 
   !=========================================================================
   !
-  !  CLMCLMCLMCLMCLMCLMCLMCLMCL  A community developed and sponsored, freely   
-  !  L                        M  available land surface process model.  
-  !  M --COMMON LAND MODEL--  C  	
+  !  CLMCLMCLMCLMCLMCLMCLMCLMCL  A community developed and sponsored, freely
+  !  L                        M  available land surface process model.
+  !  M --COMMON LAND MODEL--  C
   !  C                        L  CLM WEB INFO: http://clm.gsfc.nasa.gov
-  !  LMCLMCLMCLMCLMCLMCLMCLMCLM  CLM ListServ/Mailing List: 
+  !  LMCLMCLMCLMCLMCLMCLMCLMCLM  CLM ListServ/Mailing List:
   !
   !=========================================================================
 
@@ -39,7 +39,7 @@ clm_last_rst,clm_daily_rst, pf_nlevsoi, pf_nlevlak)
   ! This added call to set-up parameters...
   ! use clm_varpar
   !=== Parameters ==========================================================
-  ! integer :: nz_rz                               ! number of layers, now passed from ParFlow 
+  ! integer :: nz_rz                               ! number of layers, now passed from ParFlow
   ! call clm_varpar(
   ! integer, parameter :: nlevsoi     =  nz_rz     !number of soil levels
   ! integer, parameter :: nlevlak     =  10        !number of lake levels
@@ -49,14 +49,14 @@ clm_last_rst,clm_daily_rst, pf_nlevsoi, pf_nlevlak)
 
   integer  :: pf_nlevsoi                         ! number of soil levels, passed from PF
   integer  :: pf_nlevlak                         ! number of lake levels, passed from PF
- 
+
   !=== Local Variables =====================================================
 
   ! basic indices, counters
   integer  :: t                                   ! tile space counter
-  integer  :: l                                   ! layer counter 
+  integer  :: l                                   ! layer counter
   integer  :: r,c                                 ! row,column indices
-  integer  :: ierr                                ! error output 
+  integer  :: ierr                                ! error output
 
   ! values passed from parflow
   integer  :: nx,ny,nz,nx_f,ny_f,nz_f,nz_rz
@@ -74,7 +74,7 @@ clm_last_rst,clm_daily_rst, pf_nlevsoi, pf_nlevlak)
   integer  :: istep_pf                           ! istep, now passed from PF
   integer  :: ix                                 ! parflow ix, starting point for local grid on global grid
   integer  :: iy                                 ! parflow iy, starting point for local grid on global grid
-  integer  :: ip                               
+  integer  :: ip
   integer  :: npp,npq,npr                        ! number of processors in x,y,z
   integer  :: gnx, gny                           ! global grid, nx and ny
   integer  :: rank                               ! processor rank, from ParFlow
@@ -123,7 +123,7 @@ clm_last_rst,clm_daily_rst, pf_nlevsoi, pf_nlevlak)
   integer  :: clm_forc_veg                       ! BH: whether vegetation (LAI, SAI, z0m, displa) is being forced 0=no, 1=yes
   integer  :: clm_output_dir_length              ! for output directory
   integer  :: clm_bin_output_dir                 ! output directory
-  integer  :: write_CLM_binary                   ! whether to write CLM output as binary 
+  integer  :: write_CLM_binary                   ! whether to write CLM output as binary
   character (LEN=clm_output_dir_length) :: clm_output_dir ! output dir location
 
   ! ET keys
@@ -147,10 +147,10 @@ clm_last_rst,clm_daily_rst, pf_nlevsoi, pf_nlevlak)
   integer  :: bj,bl                              ! indices for local looping !BH
 
   integer  :: j_incr,k_incr                      ! increment for j and k to convert 1D vector to 3D i,j,k array
-  integer, allocatable :: counter(:,:) 
+  integer, allocatable :: counter(:,:)
   real(r8) :: total
   character*100 :: RI
-  real(r8) :: u         ! Tempoary UNDEF Variable  
+  real(r8) :: u         ! Tempoary UNDEF Variable
 
   save
 
@@ -173,7 +173,7 @@ clm_last_rst,clm_daily_rst, pf_nlevsoi, pf_nlevlak)
   drv%dy = pdy
   drv%dz = pdz
   drv%nc = nx
-  drv%nr = ny                   
+  drv%nr = ny
   drv%nt = 18                  ! 18 IGBP land cover classes
   drv%ts = dt*3600.d0          ! Assume PF in hours, CLM in seconds
   j_incr = nx_f
@@ -184,8 +184,8 @@ clm_last_rst,clm_daily_rst, pf_nlevsoi, pf_nlevlak)
   nlevlak = pf_nlevlak
 
   !=== Check if initialization is necessary
-  if (time == start_time) then 
-     
+  if (time == start_time) then
+
      if (clm_write_logs==1) write(999,*) "INITIALIZATION"
 
 !RMM: writing a CLM.out.clm.log file with basic information only from the master node (0 processor)
@@ -200,7 +200,7 @@ clm_last_rst,clm_daily_rst, pf_nlevsoi, pf_nlevlak)
 
      !=== Allocate Memory for Grid Module
      allocate( counter(nx,ny) )
-     allocate (grid(drv%nc,drv%nr),stat=ierr) ; call drv_astp(ierr) 
+     allocate (grid(drv%nc,drv%nr),stat=ierr) ; call drv_astp(ierr)
      do r=1,drv%nr                              ! rows
         do c=1,drv%nc                           ! columns
            grid(c,r)%smpmax = u                 ! SGS Added initialization to address valgrind issues
@@ -230,12 +230,12 @@ clm_last_rst,clm_daily_rst, pf_nlevsoi, pf_nlevlak)
      !=== LEGACY =============================================================================================
      !=== (Keeping around in case we go back to multiple tiles per cell)
 
-     !=== This is done twice, because tile space size is initially unknown        
-     !=== First - allocate max possible size, then allocate calculated size 
+     !=== This is done twice, because tile space size is initially unknown
+     !=== First - allocate max possible size, then allocate calculated size
      !=== Allocate maximum NCH
      ! if (clm_write_logs==1) write(999,*) "Allocate arrays -- using maximum NCH"
      ! drv%nch = drv%nr*drv%nc*drv%nt
-     ! allocate (tile(drv%nch),stat=ierr); call drv_astp(ierr) 
+     ! allocate (tile(drv%nch),stat=ierr); call drv_astp(ierr)
      ! allocate (clm (drv%nch),stat=ierr); call drv_astp(ierr)
 
      !=== Read vegetation data to determine actual NCH
@@ -254,7 +254,7 @@ clm_last_rst,clm_daily_rst, pf_nlevsoi, pf_nlevlak)
      !    (nch is just equal to number of cells (nr*nc))
      drv%nch = drv%nr*drv%nc
      if (clm_write_logs==1) write(999,*) "Allocate arrays -- using NCH =", drv%nch
-     allocate (tile(drv%nch), stat=ierr); call drv_astp(ierr) 
+     allocate (tile(drv%nch), stat=ierr); call drv_astp(ierr)
      allocate (clm (drv%nch), stat=ierr); call drv_astp(ierr)
 
 
@@ -265,12 +265,12 @@ clm_last_rst,clm_daily_rst, pf_nlevsoi, pf_nlevlak)
 
 
      !=== Set clm diagnostic indices and allocate space
-     clm%surfind = drv%surfind 
+     clm%surfind = drv%surfind
      clm%soilind = drv%soilind
      clm%snowind = drv%snowind
 
-     do t=1,drv%nch 
-        allocate (clm(t)%diagsurf(1:drv%surfind             ),stat=ierr); call drv_astp(ierr) 
+     do t=1,drv%nch
+        allocate (clm(t)%diagsurf(1:drv%surfind             ),stat=ierr); call drv_astp(ierr)
         allocate (clm(t)%diagsoil(1:drv%soilind,1:nlevsoi   ),stat=ierr); call drv_astp(ierr)
         allocate (clm(t)%diagsnow(1:drv%snowind,-nlevsno+1:0),stat=ierr); call drv_astp(ierr)
      end do
@@ -283,7 +283,7 @@ clm_last_rst,clm_daily_rst, pf_nlevsoi, pf_nlevlak)
      !=== Initialize clm derived type components
      if (clm_write_logs==1) write(999,*) "Call clm_typini"
      call clm_typini(drv%nch,clm,istep_pf)
-     
+
      if (clm_write_logs==1) then
      write(999,*) "DIMENSIONS:"
      write(999,*) 'local NX:',nx,' NX with ghost:',nx_f,' IX:', ix
@@ -298,30 +298,30 @@ clm_last_rst,clm_daily_rst, pf_nlevsoi, pf_nlevlak)
      call drv_readvegtf (drv, grid, tile, clm, nx, ny, ix, iy, gnx, gny, rank)
 
 
-     !=== Transfer grid variables to tile space 
+     !=== Transfer grid variables to tile space
      if (clm_write_logs==1) write(999,*) "Transfer grid variables to tile space ", drv%nch
      do t = 1, drv%nch
-        call drv_g2clm (drv%udef, drv, grid, tile(t), clm(t))   
+        call drv_g2clm (drv%udef, drv, grid, tile(t), clm(t))
      enddo
 
      !=== Read vegetation parameter data file for IGBP classification
      if (clm_write_logs==1) write(999,*) "Read vegetation parameter data file for IGBP classification"
-     call drv_readvegpf (drv, grid, tile, clm)  
+     call drv_readvegpf (drv, grid, tile, clm)
 
 
      !=== Initialize CLM and DIAG variables
      if (clm_write_logs==1) write(999,*) "Initialize CLM and DIAG variables"
-     do t=1,drv%nch 
+     do t=1,drv%nch
         clm%kpatch = t
         call drv_clmini (drv, grid, tile(t), clm(t), istep_pf) !Initialize CLM Variables
      enddo
 
-     !=== Initialize the CLM topography mask 
-     !    This is two components: 
-     !    1) a x-y mask of 0 o 1 for active inactive and 
-     !    2) a z/k mask that takes three values 
-     !      (1)= top of LS/PF domain 
-     !      (2)= top-nlevsoi and 
+     !=== Initialize the CLM topography mask
+     !    This is two components:
+     !    1) a x-y mask of 0 o 1 for active inactive and
+     !    2) a z/k mask that takes three values
+     !      (1)= top of LS/PF domain
+     !      (2)= top-nlevsoi and
      !      (3)= the bottom of the LS/PF domain.
      if (clm_write_logs==1) write(999,*) "Initialize the CLM topography mask"
 
@@ -336,7 +336,7 @@ clm_last_rst,clm_daily_rst, pf_nlevsoi, pf_nlevlak)
            l = 1+i + (nx+2)*(j) + (nx+2)*(ny+2)*(k)
            if (topo(l) > 0) then
               counter(i,j) = counter(i,j) + 1
-              if (counter(i,j) == 1) then 
+              if (counter(i,j) == 1) then
                  clm(t)%topo_mask(1) = k
                  clm(t)%planar_mask = 1
               end if
@@ -359,20 +359,20 @@ clm_last_rst,clm_daily_rst, pf_nlevsoi, pf_nlevlak)
      !    write(161,*) t, i, j, clm(t)%planar_mask
      ! enddo ! t
      ! close(161)
-     
+
      !=== IMF:
      !    Set up variable DZ over root column
      !    -- Copy dz multipliers for root zone cells from PF grid to 1D array
-     !    -- Then loop to recompute clm(t)%z(j), clm(t)%dz(j), clm(t)%zi(j) 
+     !    -- Then loop to recompute clm(t)%z(j), clm(t)%dz(j), clm(t)%zi(j)
      !       (replaces values set in drv_clmini)
      do t = 1,drv%nch
 
         i = tile(t)%col
         j = tile(t)%row
-		
+
 		!!!! BH: modification of the interfaces depths and layers thicknesses to match PF definitions
-	    clm(t)%zi(0)            = 0.   
-    
+	    clm(t)%zi(0)            = 0.
+
         ! check if cell is active
         if (clm(t)%planar_mask == 1) then
 
@@ -419,9 +419,9 @@ clm_last_rst,clm_daily_rst, pf_nlevsoi, pf_nlevlak)
 !                 clm(t)%zi(k),clm(t)%rootfr(k)
 !           enddo
           !! BH : commented (end)
-		  
+
 		   !! BH: Overwrite Rootfr disttribution: start
-           !! BH: the following overwrites the root fraction definition which is previously set up in drv_clmini.F90 
+           !! BH: the following overwrites the root fraction definition which is previously set up in drv_clmini.F90
 		   !! BH: but based on constant DZ, regardless of pf_dz_mult.
            do bj = 1, nlevsoi-1
            clm(t)%rootfr(bj) = .5*( exp(-tile(t)%roota*clm(t)%zi(bj-1))  &
@@ -432,10 +432,10 @@ clm_last_rst,clm_daily_rst, pf_nlevsoi, pf_nlevlak)
            clm(t)%rootfr(nlevsoi)=.5*( exp(-tile(t)%roota*clm(t)%zi(nlevsoi-1))&
                                + exp(-tile(t)%rootb*clm(t)%zi(nlevsoi-1)))
 
-           ! reset depth variables assigned by user in clmin file 
+           ! reset depth variables assigned by user in clmin file
            do bl=1,nlevsoi
               if (grid(tile(t)%col,tile(t)%row)%rootfr /= drv%udef) &
-                 clm(t)%rootfr(bl)=grid(tile(t)%col,tile(t)%row)%rootfr    
+                 clm(t)%rootfr(bl)=grid(tile(t)%col,tile(t)%row)%rootfr
            enddo
 
  !!          ! PRINT CHECK
@@ -445,15 +445,15 @@ clm_last_rst,clm_daily_rst, pf_nlevsoi, pf_nlevlak)
            !      clm(t)%zi(k),clm(t)%rootfr(k)
            !enddo
            !! BH: Overwrite Rootfr disttribution: end
-		   
+
 		   endif ! active/inactive
 
-     enddo !t 
-           
+     enddo !t
+
 
      !=== Loop over CLM tile space to set keys/constants from PF
      !    (watsat, residual sat, irrigation keys)
-     do t=1,drv%nch  
+     do t=1,drv%nch
 
         ! check if cell is active
         if (clm(t)%planar_mask == 1) then
@@ -471,12 +471,12 @@ clm_last_rst,clm_daily_rst, pf_nlevsoi, pf_nlevlak)
            clm(t)%irr_rate           = irr_ratepf
            clm(t)%irr_start          = irr_startpf
            clm(t)%irr_stop           = irr_stoppf
-           clm(t)%irr_threshold      = irr_thresholdpf     
+           clm(t)%irr_threshold      = irr_thresholdpf
            clm(t)%threshold_type     = irr_thresholdtypepf
- 
+
            ! set clm watsat, tksatu from PF porosity
            ! convert t to i,j index
-           i=tile(t)%col        
+           i=tile(t)%col
            j=tile(t)%row
            do k = 1, nlevsoi ! loop over clm soil layers (1->nlevsoi)
               ! convert clm space to parflow space, note that PF space has ghost nodes
@@ -499,7 +499,7 @@ clm_last_rst,clm_daily_rst, pf_nlevsoi, pf_nlevlak)
   !=== Time looping
   !=========================================================================
 
-  !=== Call routine to copy PF variables to CLM space 
+  !=== Call routine to copy PF variables to CLM space
   !    (converts saturation to soil moisture)
   !    (converts pressure from m to mm)
   !    (converts soil moisture to mass of h2o)
@@ -513,7 +513,7 @@ clm_last_rst,clm_daily_rst, pf_nlevsoi, pf_nlevlak)
 !
   if (rank==0) then
   write(9919,*)
-  write(9919,*) "CLM starting time =", time, "gmt =", drv%gmt,"istep_pf =",istep_pf 
+  write(9919,*) "CLM starting time =", time, "gmt =", drv%gmt,"istep_pf =",istep_pf
   write(9919,*) "CLM day =", drv%da, "month =", drv%mo,"year =", drv%yr
   end if ! CLM log
 
@@ -522,24 +522,26 @@ clm_last_rst,clm_daily_rst, pf_nlevsoi, pf_nlevlak)
   !    (values no longer read by drv_getforce, passed from PF)
   !    (drv_getforce is modified to convert arrays from PF input to CLM space)
   !call drv_getforce(drv,tile,clm,nx,ny,sw_pf,lw_pf,prcp_pf,tas_pf,u_pf,v_pf,patm_pf,qatm_pf,istep_pf)
-  !BH: modification of drv_getforc to optionnaly force vegetation (LAI/SAI/Z0M/DISPLA): 
-  !BH: this replaces values from clm_dynvegpar called previously from drv_clmini and 
+  !BH: modification of drv_getforc to optionnaly force vegetation (LAI/SAI/Z0M/DISPLA):
+  !BH: this replaces values from clm_dynvegpar called previously from drv_clmini and
   !BH: replaces values from drv_readvegpf
+  !IJB add slope
   call drv_getforce(drv,tile,clm,nx,ny,sw_pf,lw_pf,prcp_pf,tas_pf,u_pf,v_pf, &
-	patm_pf,qatm_pf,lai_pf,sai_pf,z0m_pf,displa_pf,istep_pf,clm_forc_veg)
+	patm_pf,qatm_pf,lai_pf,sai_pf,z0m_pf,displa_pf,istep_pf,clm_forc_veg, &
+  slope_x_2d_pf,slope_y_2d_pf)
   !=== Actual time loop
   !    (loop over CLM tile space, call 1D CLM at each point)
-  do t = 1, drv%nch     
+  do t = 1, drv%nch
      clm(t)%qflx_infl_old       = clm(t)%qflx_infl
      clm(t)%qflx_tran_veg_old   = clm(t)%qflx_tran_veg
      if (clm(t)%planar_mask == 1) then
-        call clm_main (clm(t),drv%day,drv%gmt) 
+        call clm_main (clm(t),drv%day,drv%gmt)
      else
      endif ! Planar mask
   enddo ! End of the space vector loop
 
   !=== Write CLM Output (timeseries model results)
-  if (clm_1d_out == 1) then 
+  if (clm_1d_out == 1) then
      call drv_1dout (drv, tile,clm,clm_write_logs)
   endif
 
@@ -551,7 +553,7 @@ clm_last_rst,clm_daily_rst, pf_nlevsoi, pf_nlevlak)
      if (write_CLM_binary==1) then
 
         ! Call subroutine to open (2D-) output files
-        call open_files (clm,drv,rank,ix,iy,istep_pf,clm_output_dir,clm_output_dir_length,clm_bin_output_dir) 
+        call open_files (clm,drv,rank,ix,iy,istep_pf,clm_output_dir,clm_output_dir_length,clm_bin_output_dir)
 
         ! Call subroutine to write 2D output
         call drv_2dout  (drv,grid,clm)
@@ -567,7 +569,7 @@ clm_last_rst,clm_daily_rst, pf_nlevsoi, pf_nlevlak)
   do t=1,drv%nch
      i=tile(t)%col
      j=tile(t)%row
-     l = 1+i + (nx+2)*(j) + (nx+2)*(ny+2) 
+     l = 1+i + (nx+2)*(j) + (nx+2)*(ny+2)
      if (clm(t)%planar_mask==1) then
         eflx_lh_pf(l)      = clm(t)%eflx_lh_tot
         eflx_lwrad_pf(l)   = clm(t)%eflx_lwrad_out
@@ -576,10 +578,10 @@ clm_last_rst,clm_daily_rst, pf_nlevsoi, pf_nlevlak)
         qflx_tot_pf(l)     = clm(t)%qflx_evap_tot
         qflx_grnd_pf(l)    = clm(t)%qflx_evap_grnd
         qflx_soi_pf(l)     = clm(t)%qflx_evap_soi
-        qflx_eveg_pf(l)    = clm(t)%qflx_evap_veg 
+        qflx_eveg_pf(l)    = clm(t)%qflx_evap_veg
         qflx_tveg_pf(l)    = clm(t)%qflx_tran_veg
-        qflx_in_pf(l)      = clm(t)%qflx_infl 
-        swe_pf(l)          = clm(t)%h2osno 
+        qflx_in_pf(l)      = clm(t)%qflx_infl
+        swe_pf(l)          = clm(t)%h2osno
         t_g_pf(l)          = clm(t)%t_grnd
         qirr_pf(l)         = clm(t)%qflx_qirr
         irr_flag_pf(l)     = clm(t)%irr_flag
@@ -625,7 +627,7 @@ clm_last_rst,clm_daily_rst, pf_nlevsoi, pf_nlevlak)
 
   !=== Write Daily Restarts
   if (clm_write_logs==1) then
-  write(999,*) "End of time advance:" 
+  write(999,*) "End of time advance:"
   write(999,*) 'time =', time, 'gmt =', drv%gmt, 'endtime =', drv%endtime
   endif
  if (rank==0) then
@@ -641,7 +643,7 @@ clm_last_rst,clm_daily_rst, pf_nlevsoi, pf_nlevlak)
     else
        d_stp = istep_pf
     endif
-    
+
     if (clm_daily_rst==1) then
 
        ! Restarts occur at daily boundaries and at end of the run.
@@ -655,7 +657,7 @@ clm_last_rst,clm_daily_rst, pf_nlevsoi, pf_nlevlak)
              write(393,*) "set istep ",istep_pf
              close(393)
           end if  !  write istep corresponding to restart step
-             
+
           call drv_restart(2,drv,tile,clm,rank,d_stp)
 
        end if
@@ -671,7 +673,7 @@ clm_last_rst,clm_daily_rst, pf_nlevsoi, pf_nlevlak)
              write(393,*) "set istep ",istep_pf
              close(393)
           end if  !  write istep corresponding to restart step
-             
+
           call drv_restart(2,drv,tile,clm,rank,d_stp)
 
        end if
@@ -685,7 +687,7 @@ clm_last_rst,clm_daily_rst, pf_nlevsoi, pf_nlevlak)
 
 
   !=== LEGACY ===========================================================================================
-  !    (no longer needed because current setup restricts one tile per grid cell) 
+  !    (no longer needed because current setup restricts one tile per grid cell)
   !=== Return required surface fields to atmospheric model (return to grid space)
   !    (accumulates tile fluxes over grid space)
   ! call drv_clm2g (drv, grid, tile, clm)
@@ -703,6 +705,6 @@ clm_last_rst,clm_daily_rst, pf_nlevsoi, pf_nlevlak)
      if (clm_write_logs==1) close(999)
      if (rank == 0) close (9919)
   end if
-  
+
 
 end subroutine clm_lsm
