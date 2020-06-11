@@ -707,31 +707,32 @@ clm_last_rst,clm_daily_rst, pf_nlevsoi, pf_nlevlak)
   end if
 ! ---------------------------------------------------------------------------------------
 ! Start test code
-  IMPLICIT NONE
-
-  INTEGER :: i, j, numrows, numcols
-  INTEGER, DIMENSION(:,:), ALLOCATABLE :: a
-  CHARACTER(LEN=30) :: rowfmt
-
-  numrows=SIZE(slope_y_2d_pf,1)
-  numcols=SIZE(slope_y_2d_pf,2)
-  ALLOCATE(a(numrows,numcols))
-
-  DO i=1,SIZE(a,1)
-    DO j=1,SIZE(a,2)
-      a(i,j)=slope_y_2d_pf(i,j)
-
-    END DO
-  END DO
-
-
-  WRITE(rowfmt,'(A,I4,A)') '(',numcols,'(1X,I6))'
-  OPEN(UNIT=12, FILE="~/GitHub/test/clm/slope_y.txt", ACTION="write", STATUS="replace", &
-       RECL=(7*numcols+10))
-  DO i=1,numrows
-    WRITE(12,FMT=rowfmt) (a(i,j), j=1,numcols)
-  END DO
-  CLOSE(UNIT=12)
+!   IMPLICIT NONE
+! 
+!   INTEGER :: i, j, numrows, numcols
+!   INTEGER, DIMENSION(:,:), ALLOCATABLE :: a
+!   CHARACTER(LEN=30) :: rowfmt
+! 
+!   numrows=SIZE(slope_y_2d_pf,1)
+!   numcols=SIZE(slope_y_2d_pf,2)
+!   ALLOCATE(a(numrows,numcols))
+! 
+!   DO i=1,SIZE(a,1)
+!     DO j=1,SIZE(a,2)
+!       a(i,j)=slope_y_2d_pf(i,j)
+! 
+!     END DO
+!   END DO
+! 
+! 
+!   WRITE(rowfmt,'(A,I4,A)') '(',numcols,'(1X,I6))'
+!   OPEN(UNIT=12, FILE="~/GitHub/test/clm/slope_y.txt", ACTION="write", STATUS="replace", &
+!        RECL=(7*numcols+10))
+!   DO i=1,numrows
+!     WRITE(12,FMT=rowfmt) (a(i,j), j=1,numcols)
+!   END DO
+!   CLOSE(UNIT=12)
 ! End test code
+print, slope_y_pf
 ! ----------------------------------------------------------------------------------------
 end subroutine clm_lsm
