@@ -705,6 +705,33 @@ clm_last_rst,clm_daily_rst, pf_nlevsoi, pf_nlevlak)
      if (clm_write_logs==1) close(999)
      if (rank == 0) close (9919)
   end if
+! ---------------------------------------------------------------------------------------
+! Start test code
+  IMPLICIT NONE
+
+  INTEGER :: i, j, k, numrows, numcols
+  INTEGER, DIMENSION(:,:), ALLOCATABLE :: a
+  CHARACTER(LEN=30) :: rowfmt
+
+  numrows=10
+  numcols=5
+  ALLOCATE(a(numrows,numcols))
+  k=1
+  DO i=1,SIZE(a,1)
+    DO j=1,SIZE(a,2)
+      a(i,j)=k
+      k=k+1
+    END DO
+  END DO
 
 
+  WRITE(rowfmt,'(A,I4,A)') '(',numcols,'(1X,I6))'
+  OPEN(UNIT=12, FILE="aoutput.txt", ACTION="write", STATUS="replace", &
+       RECL=(7*numcols+10))
+  DO i=1,numrows
+    WRITE(12,FMT=rowfmt) (a(i,j), j=1,numcols)
+  END DO
+  CLOSE(UNIT=12)
+! End test code
+! ----------------------------------------------------------------------------------------
 end subroutine clm_lsm
