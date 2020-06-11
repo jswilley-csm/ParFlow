@@ -162,6 +162,7 @@ clm_last_rst,clm_daily_rst, pf_nlevsoi, pf_nlevlak)
 
   !=== Open CLM text output
   write(RI,*)  rank
+  print*, slope_y_pf
 
 ! NBE: Throughout clm.F90, any writes to unit 999 are now prefaced with the logical to disable the
 !       writing of the log files. This greatly reduces the number of files created during a run.
@@ -733,6 +734,6 @@ clm_last_rst,clm_daily_rst, pf_nlevsoi, pf_nlevlak)
 !   END DO
 !   CLOSE(UNIT=12)
 ! End test code
-print, slope_y_pf
+
 ! ----------------------------------------------------------------------------------------
 end subroutine clm_lsm
