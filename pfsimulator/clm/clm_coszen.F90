@@ -131,4 +131,6 @@ coszen = sin(phi) * sin(delta) * cos(slope) &
 
   if (coszen >= -0.001 .and. coszen <= 0.) coszen=0.001
 
+print *, coszen
+
 end subroutine clm_coszen

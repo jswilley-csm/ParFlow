@@ -107,7 +107,7 @@ ENV PARFLOW_MPIEXEC_EXTRA_FLAGS "--mca mpi_yield_when_idle 1 --oversubscribe --a
 
 WORKDIR /home/parflow
 
-RUN git clone https://github.com/ian-bertolacci/ParFlow-test.git
+RUN git clone https://github.com/jswilley-csm/ParFlow-test.git
 
 RUN mkdir -p build && \
     cd build && \
